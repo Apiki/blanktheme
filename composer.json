@@ -1,0 +1,8 @@
+{
+    "config": {
+        "vendor-dir": "includes/vendor"
+    },
+    "require": {
+        "tgmpa/tgm-plugin-activation": "^2.5"
+    }
+}

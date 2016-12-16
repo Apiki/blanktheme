@@ -3,19 +3,17 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	var options = {
-		config : {
-			src : 'grunt-tasks/*.js'
-		},
-		paths : {
-			style : 'assets/stylesheets',
-			js    : 'assets/javascripts'
+		data: {
+			paths: {
+				style: 'assets/stylesheets',
+				js: 'assets/javascripts'
+			}
 		}
 	};
 
-	var configs = require('load-grunt-configs')(grunt, options);
-
-	grunt.initConfig(configs);
+	require('load-grunt-config')(grunt, options);
 
 	grunt.registerTask('default', ['concurrent:dev']);
 	grunt.registerTask('deploy', ['concurrent:dist', 'uglify']);
+	grunt.registerTask('dev', ['browserSync', 'watch']);
 };

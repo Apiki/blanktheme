@@ -1,5 +1,5 @@
 (function($, window) {
 
-	console.log( 'my custom script' );
+	console.log( 'custom script' );
 
 })( jQuery, window );

@@ -15,7 +15,7 @@ abstract class Loader
 	{
 		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
 		add_action( 'after_setup_theme', array( &$this, 'load_theme_textdomain' ) );
-		add_action( 'after_switch_theme', array( &$this, 'install' ) );
+		add_action( 'after_switch_theme', array( &$this, 'after_switch_theme' ) );
 		add_action( 'admin_bar_menu', array( &$this, 'add_ghost_menu' ), 999 );
 		add_action( 'admin_head', array( &$this, 'ghost_icon' ) );
 		add_action( 'wp_head', array( &$this, 'ghost_icon' ) );
@@ -34,6 +34,11 @@ abstract class Loader
 	public function after_setup_theme()
 	{
 
+	}
+
+	public function after_switch_theme()
+	{
+		add_action( 'after_setup_theme', array( &$this, 'install' ) );
 	}
 
 	public function install()
@@ -110,21 +115,20 @@ abstract class Loader
 	public function add_ghost_menu( $wp_admin_bar )
 	{
 		$user         = wp_get_current_user();
-		$is_localhost = ( isset( $_SERVER['SERVER_NAME'] ) && $_SERVER['SERVER_NAME'] == 'localhost' );
+		$is_localhost = ( isset( $_SERVER['SERVER_NAME'] ) && $_SERVER['SERVER_NAME'] === 'localhost' );
 
 		if ( ( $user && isset( $user->user_login ) && 'apiki' === $user->user_login ) || $is_localhost ) {
-
-			$args = array(
-				'id'	=> 'ghost',
-				'title' => '<span class="ab-icon"></span><span class="ab-label">Ghost</span>',
-				'href'  => Utils::get_template_url() . '/ghost',
-				'meta'  => array(
-					'class' => 'ghost',
-					'title' => 'Ghost',
-				),
+			$wp_admin_bar->add_node(
+				array(
+					'id'	=> 'ghost',
+					'title' => '<span class="ab-icon"></span><span class="ab-label">Ghost</span>',
+					'href'  => Utils::get_template_url() . '/ghost',
+					'meta'  => array(
+						'class' => 'ghost',
+						'title' => 'Ghost',
+					),
+				)
 			);
-
-			$wp_admin_bar->add_node( $args );
 		}
 	}
 

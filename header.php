@@ -1,18 +1,17 @@
 <?php
-// Avoid that files are directly loaded
+
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use Apiki\Theme\Utils;
-use Apiki\Theme\Menu;
+use GB\Theme\Helper\Utils;
+use GB\Theme\Model\Menu;
 ?>
 
 <!doctype html>
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title><?php wp_title(); ?></title>
 		<link rel="stylesheet" href="<?php Utils::the_stylesheet_uri(); ?>">
 		<link rel="shortcut icon" href="<?php echo esc_url( Utils::get_template_url() ); ?>/assets/images/favicon.ico" type="image/x-icon" />
 		<!--[if lt IE 9]>

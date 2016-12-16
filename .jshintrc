@@ -1,6 +1,5 @@
 {
 	"asi": true,
-	"camelcase": true,
 	"curly": true,
 	"eqnull": true,
 	"undef": true,

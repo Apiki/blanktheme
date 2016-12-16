@@ -4,7 +4,7 @@ module.exports = {
 			domainPath: '/languages',
 			type: 'wp-theme',
 			exclude: ['includes/vendor/.*'],
-			potHeaders : {
+			potHeaders: {
 				'language': 'en',
 				'plural-forms': 'nplurals=2; plural=(n != 1);',
 				'x-poedit-country': 'United States',

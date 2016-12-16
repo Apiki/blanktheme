@@ -1,15 +1,15 @@
 module.exports = {
-	options : {
+	options: {
 		separator : ';'
 	},
-	dev : {
-		src : [
+	dev: {
+		src: [
 			'<%= paths.js %>/libs/*.js',
 			'<%= paths.js %>/vendor/*.js',
 			'<%= paths.js %>/templates/*.js',
 			'<%= paths.js %>/custom/*.js',
 			'<%= paths.js %>/boot.js'
 		],
-		dest : '<%= paths.js %>/built.js',
+		dest: '<%= paths.js %>/built.js',
 	}
 };

@@ -1,13 +1,14 @@
 <?php
-namespace Apiki\Theme;
+
+namespace GB\Theme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'menu', 'Model' );
+use GB\Theme\Model\Menu;
 
-class Menus_Controller
+class Menus
 {
 	public function __construct()
 	{

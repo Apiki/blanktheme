@@ -1,8 +1,14 @@
 {
-    "config": {
-        "vendor-dir": "includes/vendor"
-    },
+    "name": "apiki/gb-theme",
+    "description": "Ghost Back theme.",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0",
     "require": {
-        "tgmpa/tgm-plugin-activation": "^2.5"
+        "tgmpa/tgm-plugin-activation": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "GB\\Theme\\": "src/"
+        }
     }
 }

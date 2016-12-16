@@ -1,11 +1,12 @@
 <?php
-namespace Apiki\Theme;
+
+namespace GB\Theme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-class Supports_Controller
+class Supports
 {
 	public function __construct()
 	{

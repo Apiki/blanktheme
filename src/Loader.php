@@ -1,21 +1,16 @@
 <?php
 
-namespace Apiki\Theme;
+namespace GB\Theme;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
+use GB\Theme\Helper\Utils;
+use ReflectionClass;
+
 abstract class Loader
 {
-	/**
-	 * Namespace
-	 *
-	 * @since 1.1
-	 * @var string
-	 */
-	public $namespace = 'Apiki\Theme';
-
 	public function __construct()
 	{
 		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
@@ -53,7 +48,7 @@ abstract class Loader
 
 	public function load_theme_textdomain()
 	{
-		load_theme_textdomain( App::SLUG, Utils::get_template_directory() . '/languages' );
+		load_theme_textdomain( static::SLUG, Utils::get_template_directory() . '/languages' );
 	}
 
 	public function define_content_width( $width )
@@ -79,11 +74,11 @@ abstract class Loader
 	{
 		$defaults = array(
 			array(
-				'name'               => 'GB WP API',
-				'slug'               => 'gb-wp-api',
+				'name'               => 'GB Plugin API',
+				'slug'               => 'gb-plugin-api',
 				'source'             => plugins_url(),
 				'required'           => true,
-				'version'            => '1.0.0',
+				'version'            => '0.0.1',
 				'force_activation'   => false,
 				'force_deactivation' => false,
 			),
@@ -99,10 +94,17 @@ abstract class Loader
 
 	public function load_controllers( $controllers )
 	{
+		$namespace = $this->get_namespace();
+
 		foreach ( $controllers as $name ) {
-			$class = sprintf( "{$this->namespace}\%s_Controller", $name );
+			$class = sprintf( "{$namespace}\Controller\%s", $name );
 			new $class( true );
 		}
+	}
+
+	public function get_namespace()
+	{
+		return ( new ReflectionClass( $this ) )->getNamespaceName();
 	}
 
 	public function add_ghost_menu( $wp_admin_bar )
@@ -110,7 +112,7 @@ abstract class Loader
 		$user         = wp_get_current_user();
 		$is_localhost = ( isset( $_SERVER['SERVER_NAME'] ) && $_SERVER['SERVER_NAME'] == 'localhost' );
 
-		if ( ( $user && isset( $user->user_login ) && 'apiki' == $user->user_login ) || $is_localhost ) {
+		if ( ( $user && isset( $user->user_login ) && 'apiki' === $user->user_login ) || $is_localhost ) {
 
 			$args = array(
 				'id'	=> 'ghost',

@@ -1,13 +1,14 @@
 <?php
-namespace Apiki\Theme;
+
+namespace GB\Theme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'image', 'Model' );
+use GB\Theme\Model\Image;
 
-class Images_Controller
+class Images
 {
 	public function __construct()
 	{

@@ -1,15 +1,14 @@
 <?php
 
-namespace Apiki\Theme;
+namespace GB\Theme\Helper;
 
-// Avoid that files are directly loaded
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API;
+use GB\API\Helper;
 
-class Utils extends API\Utils
+class Utils extends Helper\Utils
 {
 	private static $template_url;
 	private static $template_directory;

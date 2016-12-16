@@ -1,13 +1,14 @@
 <?php
-namespace Apiki\Theme;
+
+namespace GB\Theme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'sidebar', 'Model' );
+use GB\Theme\Model\Sidebar;
 
-class Sidebars_Controller
+class Sidebars
 {
 	public function __construct()
 	{
@@ -25,7 +26,7 @@ class Sidebars_Controller
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
-			)
+			),
 		);
 
 		array_map( 'register_sidebar', $available_sidebars );

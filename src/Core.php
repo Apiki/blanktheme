@@ -1,23 +1,15 @@
 <?php
 
-namespace Apiki\Theme;
+namespace GB\Theme;
 
-// Avoid that files are directly loaded
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'autoload', 'vendor' );
-App::uses( 'loader', 'config' );
-App::uses( 'utils', 'helper' );
-
-App::uses( 'menus', 'Controller' );
-App::uses( 'images', 'Controller' );
-App::uses( 'supports', 'Controller' );
-App::uses( 'sidebars', 'Controller' );
-
 class Core extends Loader
 {
+	const SLUG = 'gb-theme';
+
 	public function initialize()
 	{
 		$this->load_controllers(
@@ -42,7 +34,7 @@ class Core extends Loader
 	public function enqueue_scripts()
 	{
 		wp_enqueue_script(
-			App::SLUG . '-theme-script',
+			self::SLUG . '-theme-script',
 			get_theme_file_uri( 'assets/javascripts/built.js' ),
 			array( 'jquery' ),
 			filemtime( get_theme_file_path( 'assets/javascripts/built.js' ) ),
@@ -50,7 +42,7 @@ class Core extends Loader
 		);
 
 		wp_localize_script(
-			App::SLUG . '-theme-script',
+			self::SLUG . '-theme-script',
 			'SiteGlobalVars',
 			$this->get_global_vars()
 		);

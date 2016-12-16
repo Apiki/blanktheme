@@ -11,7 +11,6 @@ abstract class Loader
 	/**
 	 * Namespace
 	 *
-	 * @since 1.1
 	 * @var string
 	 */
 	public $namespace = 'Apiki\Theme';
@@ -67,7 +66,7 @@ abstract class Loader
 
 	public function create_template_pages()
 	{
-		$templates = get_page_templates();
+		$templates = wp_get_theme()->get_page_templates();
 
 		foreach ( $templates as $page_name => $page_template ) {
 			$page_id = Utils::maybe_create_page( $page_name );
@@ -80,10 +79,10 @@ abstract class Loader
 		$defaults = array(
 			array(
 				'name'               => 'GB WP API',
-				'slug'               => 'gb-wp-api',
+				'slug'               => 'gb-plugin-api',
 				'source'             => plugins_url(),
 				'required'           => true,
-				'version'            => '1.0.0',
+				'version'            => '0.0.1',
 				'force_activation'   => false,
 				'force_deactivation' => false,
 			),
@@ -100,8 +99,8 @@ abstract class Loader
 	public function load_controllers( $controllers )
 	{
 		foreach ( $controllers as $name ) {
-			$class = sprintf( "{$this->namespace}\%s_Controller", $name );
-			new $class( true );
+			$class    = sprintf( "{$this->namespace}\%s_Controller", $name );
+			$instance = new $class( true );
 		}
 	}
 

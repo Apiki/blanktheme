@@ -11,9 +11,32 @@ use GB\API;
 
 class Utils extends API\Utils
 {
+	/**
+	 * Template URL
+	 *
+	 * @var string
+	 */
 	private static $template_url;
+
+	/**
+	 * Template Directory Path
+	 *
+	 * @var string
+	 */
 	private static $template_directory;
+
+	/**
+	 * Site URL this project
+	 *
+	 * @var string
+	 */
 	private static $site_url;
+
+	/**
+	 * Site Name this project
+	 *
+	 * @var string
+	 */
 	private static $site_name;
 
 	public static function get_template_url()

@@ -1,6 +1,6 @@
 module.exports = {
-	dist : {
-		files : {
+	dist: {
+		files: {
 			'<%= concat.dev.dest %>' : '<%= concat.dev.dest %>'
 		}
 	}

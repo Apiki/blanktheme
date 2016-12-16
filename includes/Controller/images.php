@@ -1,11 +1,12 @@
 <?php
+
 namespace Apiki\Theme;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'image', 'Model' );
+App::uses( 'Model', 'image' );
 
 class Images_Controller
 {

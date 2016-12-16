@@ -7,14 +7,13 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'autoload', 'vendor' );
-App::uses( 'loader', 'config' );
-App::uses( 'utils', 'helper' );
-
-App::uses( 'menus', 'Controller' );
-App::uses( 'images', 'Controller' );
-App::uses( 'supports', 'Controller' );
-App::uses( 'sidebars', 'Controller' );
+App::uses( 'vendor', 'autoload' );
+App::uses( 'Config', 'loader' );
+App::uses( 'Helper', 'utils' );
+App::uses( 'Controller', 'menus' );
+App::uses( 'Controller', 'images' );
+App::uses( 'Controller', 'supports' );
+App::uses( 'Controller', 'sidebars' );
 
 class Core extends Loader
 {
@@ -25,6 +24,7 @@ class Core extends Loader
 				'Menus',
 				'Images',
 				'Supports',
+				'Sidebars',
 			)
 		);
 	}
@@ -58,17 +58,7 @@ class Core extends Loader
 
 	public function get_required_plugins()
 	{
-		return array(
-			array(
-				'name'               => 'WP Awesome Login',
-				'slug'               => 'wp-awesome-login',
-				'source'             => '',
-				'required'           => false,
-				'version'            => '0.2.0',
-				'force_activation'   => false,
-				'force_deactivation' => false,
-			),
-		);
+		return array();
 	}
 
 	public function get_global_vars()

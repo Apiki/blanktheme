@@ -1,11 +1,12 @@
 <?php
+
 namespace Apiki\Theme;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'menu', 'Model' );
+App::uses( 'Model', 'menu' );
 
 class Menus_Controller
 {

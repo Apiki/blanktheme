@@ -1,11 +1,12 @@
 <?php
+
 namespace Apiki\Theme;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-App::uses( 'sidebar', 'Model' );
+App::uses( 'Model', 'sidebar' );
 
 class Sidebars_Controller
 {
@@ -25,7 +26,7 @@ class Sidebars_Controller
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
-			)
+			),
 		);
 
 		array_map( 'register_sidebar', $available_sidebars );

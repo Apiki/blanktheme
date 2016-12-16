@@ -1,7 +1,7 @@
 module.exports = {
 	dev: {
 		options: {
-			proxy: 'localhost/ghost-full',
+			proxy: exec('wp option get siteurl').stdout,
 			files: ['style.css', 'assets/javascripts/built.js', '**/*.php'],
 			watchTask: true,
 			logConnections: true,

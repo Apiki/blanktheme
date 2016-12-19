@@ -18,6 +18,7 @@ class Core extends Loader
 				'Images',
 				'Supports',
 				'Sidebars',
+				'Settings',
 			)
 		);
 	}

@@ -35,6 +35,15 @@ class Core extends Loader
 
 	public function enqueue_scripts()
 	{
+		/* style.css */
+		wp_enqueue_style(
+			self::SLUG . '-theme-style',
+			get_theme_file_uri( 'style.css' ),
+			array(),
+			filemtime( get_theme_file_path( 'style.css' ) )
+		);
+
+		/* built.js */
 		wp_enqueue_script(
 			self::SLUG . '-theme-script',
 			get_theme_file_uri( 'assets/javascripts/built.js' ),
@@ -48,6 +57,36 @@ class Core extends Loader
 			'SiteGlobalVars',
 			$this->get_global_vars()
 		);
+
+		/* html5.min.js */
+		wp_enqueue_script(
+			self::SLUG . '-support-html5',
+			get_theme_file_uri( 'assets/javascripts/support/html5.min.js' ),
+			array(),
+			filemtime( get_theme_file_path( 'assets/javascripts/support/html5.min.js' ) )
+		);
+
+		wp_script_add_data( self::SLUG . '-support-html5', 'conditional', 'lt IE 9' );
+
+		/* augment.min.js */
+		wp_enqueue_script(
+			self::SLUG . '-support-augment',
+			get_theme_file_uri( 'assets/javascripts/support/augment.min.js' ),
+			array(),
+			filemtime( get_theme_file_path( 'assets/javascripts/support/augment.min.js' ) )
+		);
+
+		wp_script_add_data( self::SLUG . '-support-augment', 'conditional', 'lt IE 9' );
+
+		/* selectivizr.min.js */
+		wp_enqueue_script(
+			self::SLUG . '-support-selectivizr',
+			get_theme_file_uri( 'assets/javascripts/support/selectivizr.min.js' ),
+			array(),
+			filemtime( get_theme_file_path( 'assets/javascripts/support/selectivizr.min.js' ) )
+		);
+
+		wp_script_add_data( self::SLUG . '-support-selectivizr', 'conditional', 'lt IE 9' );
 	}
 
 	public function get_required_plugins()

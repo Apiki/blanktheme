@@ -16,8 +16,8 @@ class Settings
 	public function __construct()
 	{
 		add_action( 'carbon_register_fields', array( &$this, 'register_settings' ) );
-		add_filter( Core::SLUG . 'settings_general', array( &$this, 'get_general_tab' ) );
-		add_filter( Core::SLUG . 'settings_home_page', array( &$this, 'get_home_page_tab' ) );
+		add_filter( Core::SLUG . '_settings_general', array( &$this, 'get_general_tab' ) );
+		add_filter( Core::SLUG . '_settings_home_page', array( &$this, 'get_home_page_tab' ) );
 	}
 
 	public function register_settings()
@@ -26,11 +26,11 @@ class Settings
 			->set_page_parent( 'themes.php' )
 			->add_tab(
 				__( 'General', Core::SLUG ),
-				apply_filters( Core::SLUG . 'settings_general', array() )
+				apply_filters( Core::SLUG . '_settings_general', array() )
 			)
 			->add_tab(
 				__( 'Home page', Core::SLUG ),
-				apply_filters( Core::SLUG . 'settings_home_page', array() )
+				apply_filters( Core::SLUG . '_settings_home_page', array() )
 			);
 	}
 
@@ -39,10 +39,11 @@ class Settings
 		return array_merge(
 			$fields,
 			array(
-				Field::make( 'image', Core::SLUG . '_logo', __( 'Logo', Core::SLUG ) ),
-				Field::make( 'text', Core::SLUG . '_copyright', __( 'Copyright', Core::SLUG ) ),
-				Field::make( 'header_scripts', Core::SLUG . '_header_scripts', __( 'Header scripts', Core::SLUG ) ),
-				Field::make( 'footer_scripts', Core::SLUG . '_footer_scripts', __( 'Footer scripts', Core::SLUG ) ),
+				Field::make( 'image', 'logo', __( 'Logo', Core::SLUG ) ),
+				Field::make( 'color', 'theme_color', __( 'Theme color', Core::SLUG ) ),
+				Field::make( 'text', 'copyright', __( 'Copyright', Core::SLUG ) ),
+				Field::make( 'header_scripts', 'header_scripts', __( 'Header scripts', Core::SLUG ) ),
+				Field::make( 'footer_scripts', 'footer_scripts', __( 'Footer scripts', Core::SLUG ) ),
 			)
 		);
 	}

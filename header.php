@@ -6,12 +6,14 @@ if ( ! function_exists( 'add_action' ) ) {
 
 use GB\Theme\Helper\Utils;
 use GB\Theme\Model\Menu;
+use GB\Theme\Core;
 ?>
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="theme-color" content="<?php echo esc_attr( carbon_get_theme_option( 'theme_color' ) ); ?>">
 		<?php wp_site_icon(); ?>
 		<?php wp_head(); ?>
 	</head>

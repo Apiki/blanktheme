@@ -46,9 +46,9 @@ class Core extends Loader
 		/* built.js */
 		wp_enqueue_script(
 			self::SLUG . '-theme-script',
-			get_theme_file_uri( 'assets/javascripts/built.js' ),
+			get_theme_file_uri( 'built.js' ),
 			array( 'jquery' ),
-			filemtime( get_theme_file_path( 'assets/javascripts/built.js' ) ),
+			filemtime( get_theme_file_path( 'built.js' ) ),
 			true
 		);
 
@@ -61,9 +61,9 @@ class Core extends Loader
 		/* html5.min.js */
 		wp_enqueue_script(
 			self::SLUG . '-support-html5',
-			get_theme_file_uri( 'assets/javascripts/support/html5.min.js' ),
+			get_theme_file_uri( 'ghost/assets/javascripts/support/html5.min.js' ),
 			array(),
-			filemtime( get_theme_file_path( 'assets/javascripts/support/html5.min.js' ) )
+			filemtime( get_theme_file_path( 'ghost/assets/javascripts/support/html5.min.js' ) )
 		);
 
 		wp_script_add_data( self::SLUG . '-support-html5', 'conditional', 'lt IE 9' );
@@ -71,9 +71,9 @@ class Core extends Loader
 		/* augment.min.js */
 		wp_enqueue_script(
 			self::SLUG . '-support-augment',
-			get_theme_file_uri( 'assets/javascripts/support/augment.min.js' ),
+			get_theme_file_uri( 'ghost/assets/javascripts/support/augment.min.js' ),
 			array(),
-			filemtime( get_theme_file_path( 'assets/javascripts/support/augment.min.js' ) )
+			filemtime( get_theme_file_path( 'ghost/assets/javascripts/support/augment.min.js' ) )
 		);
 
 		wp_script_add_data( self::SLUG . '-support-augment', 'conditional', 'lt IE 9' );
@@ -81,9 +81,9 @@ class Core extends Loader
 		/* selectivizr.min.js */
 		wp_enqueue_script(
 			self::SLUG . '-support-selectivizr',
-			get_theme_file_uri( 'assets/javascripts/support/selectivizr.min.js' ),
+			get_theme_file_uri( 'ghost/assets/javascripts/support/selectivizr.min.js' ),
 			array(),
-			filemtime( get_theme_file_path( 'assets/javascripts/support/selectivizr.min.js' ) )
+			filemtime( get_theme_file_path( 'ghost/assets/javascripts/support/selectivizr.min.js' ) )
 		);
 
 		wp_script_add_data( self::SLUG . '-support-selectivizr', 'conditional', 'lt IE 9' );

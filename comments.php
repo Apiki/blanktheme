@@ -61,7 +61,7 @@ use GB\Theme\Core;
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', Core::SLUG ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', Core::SLUG ); ?></p>
 		<?php endif; ?>
 	</div>
 </div>

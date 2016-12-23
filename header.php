@@ -1,3 +1,9 @@
+<?php
+
+if ( ! function_exists( 'add_action' ) ) {
+	exit( 0 );
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -18,7 +24,7 @@
 
 			<div>
 				<div class="branding">
-					<a href="#" title="branding">ghost</a>
+					<a href="<?php echo esc_url( home_url() ); ?>" title="branding"><?php bloginfo( 'blogname' ); ?></a>
 				</div>
 			</div>
 

@@ -12,13 +12,16 @@ class Core extends Loader
 
 	public function initialize()
 	{
+		add_action( $this::SLUG . '_start_body', array( &$this, 'enqueue_body_scripts' ) );
+
 		$this->load_controllers(
 			array(
-				'Menus',
+				'Customizer',
 				'Images',
-				'Supports',
-				'Sidebars',
+				'Menus',
 				'Settings',
+				'Sidebars',
+				'Supports',
 			)
 		);
 	}
@@ -30,6 +33,8 @@ class Core extends Loader
 
 	public function install()
 	{
+		$this->load_controllers( array(), true );
+
 		$this->create_template_pages();
 	}
 
@@ -109,5 +114,10 @@ class Core extends Loader
 		return array(
 			'urlAjax' => admin_url( 'admin-ajax.php' ),
 		);
+	}
+
+	public function enqueue_body_scripts()
+	{
+		echo carbon_get_theme_option( 'body_scripts' );
 	}
 }

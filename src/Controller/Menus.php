@@ -7,6 +7,7 @@ if ( ! function_exists( 'add_action' ) ) {
 }
 
 use GB\Theme\Model\Menu;
+use GB\Theme\Core;
 
 class Menus
 {
@@ -17,6 +18,6 @@ class Menus
 
 	public function register_menus()
 	{
-		register_nav_menu( Menu::HEADER, 'Menu Cabeçalho' );
+		register_nav_menu( Menu::HEADER, __( 'Menu Cabeçalho', Core::SLUG ) );
 	}
 }

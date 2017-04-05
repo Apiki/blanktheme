@@ -20,7 +20,6 @@ abstract class Loader
 		add_action( 'admin_head', array( &$this, 'ghost_icon' ) );
 		add_action( 'wp_head', array( &$this, 'ghost_icon' ) );
 		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
-		add_action( 'tgmpa_register', array( &$this, 'register_required_plugins' ) );
 		add_filter( 'gform_confirmation_anchor', '__return_false' );
 
 		$this->initialize();
@@ -38,7 +37,7 @@ abstract class Loader
 
 	public function after_switch_theme()
 	{
-		add_action( 'after_setup_theme', array( &$this, 'install' ) );
+		add_action( 'admin_init', array( &$this, 'install' ) );
 	}
 
 	public function install()
@@ -53,7 +52,7 @@ abstract class Loader
 
 	public function load_theme_textdomain()
 	{
-		load_theme_textdomain( static::SLUG, Utils::get_template_directory() . '/languages' );
+		load_theme_textdomain( static::SLUG, get_template_directory() . '/languages' );
 	}
 
 	public function define_content_width( $width )
@@ -75,35 +74,12 @@ abstract class Loader
 		}
 	}
 
-	public function register_required_plugins()
-	{
-		$defaults = array(
-			array(
-				'name'               => 'GB Plugin API',
-				'slug'               => 'gb-plugin-api',
-				'source'             => plugins_url(),
-				'required'           => true,
-				'version'            => '0.0.1',
-				'force_activation'   => false,
-				'force_deactivation' => false,
-			),
-		);
-
-		tgmpa( wp_parse_args( $this->get_required_plugins(), $defaults ) );
-	}
-
-	public function get_required_plugins()
-	{
-		return array();
-	}
-
-	public function load_controllers( $controllers )
+	public function load_controllers( $controllers, $activate = false )
 	{
 		$namespace = $this->get_namespace();
 
 		foreach ( $controllers as $name ) {
-			$class = sprintf( "{$namespace}\Controller\%s", $name );
-			new $class( true );
+			$this->_handle_instance( sprintf( "{$namespace}\Controller\%s", $name ), $activate );
 		}
 	}
 
@@ -122,7 +98,7 @@ abstract class Loader
 				array(
 					'id'	=> 'ghost',
 					'title' => '<span class="ab-icon"></span><span class="ab-label">Ghost</span>',
-					'href'  => Utils::get_template_url() . '/ghost',
+					'href'  => get_theme_file_uri( 'ghost' ),
 					'meta'  => array(
 						'class' => 'ghost',
 						'title' => 'Ghost',
@@ -141,5 +117,15 @@ abstract class Loader
 			}
 		</style>
 		<?php
+	}
+
+	private function _handle_instance( $class, $activate )
+	{
+		$instance = new $class( $activate );
+
+		if ( $activate ) {
+			$instance->add_capabilities( array( 'administrator', 'editor' ) );
+			unset( $instance );
+		}
 	}
 }

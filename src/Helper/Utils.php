@@ -109,4 +109,84 @@ class Utils extends Helper\Utils
 
 		echo paginate_links( wp_parse_args( $args, $defaults ) );
 	}
+
+	public static function get_social_share()
+	{
+		return array(
+			array(
+				'url'   => Utils::get_social_link( 'facebook' ),
+				'class' => 'facebook',
+				'icon'  => 'icon-g-facebook',
+				'title' => esc_attr__( 'Share on Facebook', Core::SLUG ),
+			),
+			array(
+				'url'   => Utils::get_social_link( 'linkedin' ),
+				'class' => 'linkedin',
+				'icon'  => 'icon-g-linkedin',
+				'title' => esc_attr__( 'Share on Linkedin', Core::SLUG ),
+				'size'  => array( 550, 497 ),
+			),
+			array(
+				'url'   => Utils::get_social_link( 'google_plus' ),
+				'class' => 'google-plus',
+				'icon'  => 'icon-g-google-plus',
+				'title' => esc_attr__( 'Share on Google +', Core::SLUG ),
+				'size'  => array( 400, 455 ),
+			),
+			array(
+				'url'   => Utils::get_social_link( 'whatsapp' ),
+				'class' => 'whatsapp',
+				'icon'  => 'icon-g-whatsapp',
+				'title' => esc_attr__( 'Share on WhatsApp', Core::SLUG ),
+			),
+			array(
+				'url'   => Utils::get_social_link( 'twitter' ),
+				'class' => 'twitter',
+				'icon'  => 'icon-g-twitter',
+				'title' => esc_attr__( 'Share on Twitter', Core::SLUG ),
+				'size'  => array( 400, 240 ),
+			),
+			array(
+				'url'   => Utils::get_social_link( 'pinterest' ),
+				'class' => 'pinterest',
+				'icon'  => 'icon-g-pinterest',
+				'title' => esc_attr__( 'Share on Pinterest', Core::SLUG ),
+				'size'  => array( 765, 639 ),
+			),
+		);
+	}
+
+	public static function get_social_link( $method, $post_id = false )
+	{
+		if ( $post_id ) {
+			$post = get_post( $post_id );
+			setup_postdata( $post );
+		}
+
+		$title           = get_the_title();
+		$url             = get_the_permalink();
+		$media           = get_the_post_thumbnail_url( null, 'full' );
+		$title_encoded   = rawurlencode( $title );
+		$url_encoded     = rawurlencode( $url );
+		$media_encoded   = rawurlencode( $media );
+		$twitter_status  = rawurlencode( sprintf( '%s %s', $title, $url ) );
+		$whatsapp_status = rawurlencode( sprintf( __( 'I thought you’d like this article %s', Core::SLUG ), $url ) );
+		$email_body      = rawurlencode( sprintf( __( 'Read more: %s', Core::SLUG ), $url ) );
+
+
+		$methods = array(
+			'pinterest'   => "https://pinterest.com/pin/create/link/?url={$url_encoded}&media={$media_encoded}&description={$title_encoded}",
+			'facebook'    => "https://www.facebook.com/sharer/sharer.php?u={$url_encoded}",
+			'email'       => "mailto:?subject={$title_encoded}&body={$email_body}",
+			'google_plus' => "https://plus.google.com/share?url={$url_encoded}",
+			'twitter'     => "https://twitter.com/home?status={$twitter_status}",
+			'whatsapp'    => "whatsapp://send?text={$whatsapp_status}",
+			'reddit'      => "https://www.reddit.com/submit?url={$url_encoded}&title={$title_encoded}",
+			'linkedin'    => "https://www.linkedin.com/shareArticle?mini=true&url={$url_encoded}&title={$title_encoded}&summary=&source=",
+		);
+
+		wp_reset_postdata();
+
+		return $methods[ $method ];
+	}
 }

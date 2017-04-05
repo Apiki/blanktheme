@@ -9,6 +9,9 @@
     "autoload": {
         "psr-4": {
             "GB\\Theme\\": "src/"
-        }
+        },
+        "files": [
+            "vendor/kirki/kirki.php"
+        ]
     }
 }

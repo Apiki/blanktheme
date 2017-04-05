@@ -8,6 +8,7 @@ class ComposerStaticInitbdb6ade3b0c22a6943a9fbd6f37ee98f
 {
     public static $files = array (
         'a5f882d89ab791a139cd2d37e50cdd80' => __DIR__ . '/..' . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
+        '4ba14324d8c06451d360dd656b73b4da' => __DIR__ . '/..' . '/kirki/kirki.php',
     );
 
     public static $prefixLengthsPsr4 = array (

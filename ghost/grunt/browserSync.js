@@ -10,7 +10,7 @@ module.exports = function (grunt, options) {
 
 	return {
 		dev: {
-			options: Object.assign( opts, grunt.file.readJSON( 'browserSync.json' ) )
+			options: Object.assign( opts, ( grunt.file.exists( 'browserSync.json' ) && grunt.file.readJSON( 'browserSync.json' ) ) || {} )
 		}
-	}
+	};
 };

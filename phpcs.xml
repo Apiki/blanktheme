@@ -11,7 +11,7 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="somos-editora"/>
+			<property name="text_domain" type="array" value="gb-theme"/>
 		</properties>
 	</rule>
 

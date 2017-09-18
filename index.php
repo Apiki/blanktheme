@@ -7,4 +7,6 @@ if ( ! function_exists( 'add_action' ) ) {
 get_header();
 ?>
 
+<p>Loop goes here!</p>
+
 <?php get_footer(); ?>

@@ -52,9 +52,9 @@ class Customizer
 			array(
 				'type'        => 'image',
 				'settings'    => 'logo',
-				'label'       => __( 'Logo', Core::SLUG ),
+				'label'       => __( 'Logo', 'gb-theme' ),
 				'section'     => 'title_tagline',
-				'description' => __( 'The logo image of the site will be used in the header and footer. Suggested size <strong>90</strong> pixels in height by <strong>30</strong> pixels in width.', Core::SLUG ),
+				'description' => __( 'The logo image of the site will be used in the header and footer. Suggested size <strong>90</strong> pixels in height by <strong>30</strong> pixels in width.', 'gb-theme' ),
 			)
 		);
 
@@ -68,7 +68,7 @@ class Customizer
 			array(
 				'type'     => 'color',
 				'settings' => 'theme_color',
-				'label'    => __( 'Android Chrome theme color', Core::SLUG ),
+				'label'    => __( 'Android Chrome theme color', 'gb-theme' ),
 				'section'  => 'colors',
 			)
 		);

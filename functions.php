@@ -8,8 +8,7 @@ include 'vendor/autoload.php';
 
 add_action( 'tgmpa_register', 'gb_theme_register_required_plugins' );
 
-function gb_theme_register_required_plugins()
-{
+function gb_theme_register_required_plugins() {
 	$plugins = array(
 		array(
 			'name'               => 'GB Plugin API',

@@ -91,12 +91,12 @@ class Utils extends Helper\Utils
 		$current_page = get_query_var( 'paged' );
 		$big          = 999999999;
 
-		if ( $total_pages == 1 ) {
+		if ( 1 === $total_pages ) {
 			return;
 		}
 
 		$defaults = array(
-			 // need an unlikely integer cause the url can contains a number
+			// need an unlikely integer cause the url can contains a number
 			'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
 			'format'    => '?paged=%#%',
 			'current'   => max( 1, $current_page ),
@@ -114,43 +114,43 @@ class Utils extends Helper\Utils
 	{
 		return array(
 			array(
-				'url'   => Utils::get_social_link( 'facebook' ),
+				'url'   => self::get_social_link( 'facebook' ),
 				'class' => 'facebook',
 				'icon'  => 'icon-g-facebook',
-				'title' => esc_attr__( 'Share on Facebook', Core::SLUG ),
+				'title' => esc_attr__( 'Share on Facebook', 'gb-theme' ),
 			),
 			array(
-				'url'   => Utils::get_social_link( 'linkedin' ),
+				'url'   => self::get_social_link( 'linkedin' ),
 				'class' => 'linkedin',
 				'icon'  => 'icon-g-linkedin',
-				'title' => esc_attr__( 'Share on Linkedin', Core::SLUG ),
+				'title' => esc_attr__( 'Share on Linkedin', 'gb-theme' ),
 				'size'  => array( 550, 497 ),
 			),
 			array(
-				'url'   => Utils::get_social_link( 'google_plus' ),
+				'url'   => self::get_social_link( 'google_plus' ),
 				'class' => 'google-plus',
 				'icon'  => 'icon-g-google-plus',
-				'title' => esc_attr__( 'Share on Google +', Core::SLUG ),
+				'title' => esc_attr__( 'Share on Google +', 'gb-theme' ),
 				'size'  => array( 400, 455 ),
 			),
 			array(
-				'url'   => Utils::get_social_link( 'whatsapp' ),
+				'url'   => self::get_social_link( 'whatsapp' ),
 				'class' => 'whatsapp',
 				'icon'  => 'icon-g-whatsapp',
-				'title' => esc_attr__( 'Share on WhatsApp', Core::SLUG ),
+				'title' => esc_attr__( 'Share on WhatsApp', 'gb-theme' ),
 			),
 			array(
-				'url'   => Utils::get_social_link( 'twitter' ),
+				'url'   => self::get_social_link( 'twitter' ),
 				'class' => 'twitter',
 				'icon'  => 'icon-g-twitter',
-				'title' => esc_attr__( 'Share on Twitter', Core::SLUG ),
+				'title' => esc_attr__( 'Share on Twitter', 'gb-theme' ),
 				'size'  => array( 400, 240 ),
 			),
 			array(
-				'url'   => Utils::get_social_link( 'pinterest' ),
+				'url'   => self::get_social_link( 'pinterest' ),
 				'class' => 'pinterest',
 				'icon'  => 'icon-g-pinterest',
-				'title' => esc_attr__( 'Share on Pinterest', Core::SLUG ),
+				'title' => esc_attr__( 'Share on Pinterest', 'gb-theme' ),
 				'size'  => array( 765, 639 ),
 			),
 		);
@@ -170,9 +170,10 @@ class Utils extends Helper\Utils
 		$url_encoded     = rawurlencode( $url );
 		$media_encoded   = rawurlencode( $media );
 		$twitter_status  = rawurlencode( sprintf( '%s %s', $title, $url ) );
-		$whatsapp_status = rawurlencode( sprintf( __( 'I thought you’d like this article %s', Core::SLUG ), $url ) );
-		$email_body      = rawurlencode( sprintf( __( 'Read more: %s', Core::SLUG ), $url ) );
-
+		/* translators: %s: post permalink */
+		$whatsapp_status = rawurlencode( sprintf( __( 'I thought you’d like this article %s', 'gb-theme' ), $url ) );
+		/* translators: %s: post permalink */
+		$email_body      = rawurlencode( sprintf( __( 'Read more: %s', 'gb-theme' ), $url ) );
 
 		$methods = array(
 			'pinterest'   => "https://pinterest.com/pin/create/link/?url={$url_encoded}&media={$media_encoded}&description={$title_encoded}",

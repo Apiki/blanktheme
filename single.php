@@ -9,10 +9,11 @@ use GB\Theme\Core;
 get_header();
 the_post();
 ?>
+
 <article class="the-content-wrap">
 	<header class="the-content-header container">
 		<div class="the-content-top">
-			<a class="back" href="#" title=""><i class="icon-g-arrow-left"></i> <?php esc_html_e( 'back', Core::SLUG ); ?></a>
+			<a class="back" href="#" title=""><i class="icon-g-arrow-left"></i> <?php esc_html_e( 'back', 'gb-theme' ); ?></a>
 			<a class="the-content-top-category middle" href="" title="">category</a>
 			<button class="the-content-top-comment"><i class="icon-g-message"></i> 3</button>
 		</div>
@@ -54,7 +55,7 @@ the_post();
 	</div>
 
 	<div class="social-share footer content">
-		<span class="social-share-text"><?php esc_html_e( 'share', Core::SLUG ); ?></span>
+		<span class="social-share-text"><?php esc_html_e( 'share', 'gb-theme' ); ?></span>
 
 		<ul class="social-share-list">
 			<li class="facebook"><a href="#" title=""><i class="icon-g-facebook"></i></a></li>

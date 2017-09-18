@@ -91,12 +91,12 @@ abstract class Loader
 	public function add_ghost_menu( $wp_admin_bar )
 	{
 		$user         = wp_get_current_user();
-		$is_localhost = ( isset( $_SERVER['SERVER_NAME'] ) && $_SERVER['SERVER_NAME'] === 'localhost' );
+		$is_localhost = ( isset( $_SERVER['SERVER_NAME'] ) && 'localhost' === $_SERVER['SERVER_NAME'] );
 
 		if ( ( $user && isset( $user->user_login ) && 'apiki' === $user->user_login ) || $is_localhost ) {
 			$wp_admin_bar->add_node(
 				array(
-					'id'	=> 'ghost',
+					'id'    => 'ghost',
 					'title' => '<span class="ab-icon"></span><span class="ab-label">Ghost</span>',
 					'href'  => get_theme_file_uri( 'ghost' ),
 					'meta'  => array(

@@ -6,6 +6,7 @@ if ( ! function_exists( 'add_action' ) ) {
 
 use GB\Theme\Model\Sidebar;
 ?>
+
 <div class="sidebar">
 	<?php dynamic_sidebar( Sidebar::HOME ); ?>
 </div>

@@ -21,14 +21,14 @@ class Settings
 
 	public function register_settings()
 	{
-		$theme_options = Container::make( 'theme_options', esc_html__( 'Theme Options', Core::SLUG ) )
+		$theme_options = Container::make( 'theme_options', esc_html__( 'Theme Options', 'gb-theme' ) )
 			->set_page_parent( 'themes.php' )
 			->add_tab(
-				esc_html__( 'General', Core::SLUG ),
+				esc_html__( 'General', 'gb-theme' ),
 				apply_filters( Core::SLUG . '_settings_general', array() )
 			);
 
-		do_action( 'like_app_settings', $theme_options );
+		do_action( Core::SLUG . '_settings', $theme_options );
 	}
 
 	public function get_general_tab( $fields )
@@ -36,10 +36,10 @@ class Settings
 		return array_merge(
 			$fields,
 			array(
-				Field::make( 'header_scripts', 'header_scripts', esc_html__( 'Header scripts', Core::SLUG ) ),
-				Field::make( 'textarea', 'body_scripts', esc_html__( 'Body scripts', Core::SLUG ) )
-					->help_text( esc_html__( 'If you need to add scripts to your body, you should enter them here.', Core::SLUG ) ),
-				Field::make( 'footer_scripts', 'footer_scripts', esc_html__( 'Footer scripts', Core::SLUG ) ),
+				Field::make( 'header_scripts', 'header_scripts', esc_html__( 'Header scripts', 'gb-theme' ) ),
+				Field::make( 'textarea', 'body_scripts', esc_html__( 'Body scripts', 'gb-theme' ) )
+					->help_text( esc_html__( 'If you need to add scripts to your body, you should enter them here.', 'gb-theme' ) ),
+				Field::make( 'footer_scripts', 'footer_scripts', esc_html__( 'Footer scripts', 'gb-theme' ) ),
 			)
 		);
 	}

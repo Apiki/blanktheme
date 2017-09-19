@@ -16,12 +16,20 @@ class ComposerStaticInitbdb6ade3b0c22a6943a9fbd6f37ee98f
         array (
             'GB\\Theme\\' => 9,
         ),
+        'C' => 
+        array (
+            'Composer\\Installers\\' => 20,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'GB\\Theme\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 

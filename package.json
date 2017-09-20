@@ -1,0 +1,29 @@
+{
+	"name": "gb-theme",
+	"version": "1.0.0",
+	"description": "Theme Boilerplate",
+	"main": "index.js",
+	"repository": "https://github.com/Apiki/gb-theme.git",
+	"author": "Apiki",
+	"license": "GPL-2.0",
+	"scripts": {
+		"storybook": "start-storybook -p 9001 -c storybook"
+	},
+	"devDependencies": {
+		"@storybook/react": "^3.2.8",
+		"css-loader": "^0.28.7",
+		"extract-text-webpack-plugin": "^3.0.0",
+		"import-glob-loader": "^1.1.0",
+		"node-sass": "^4.5.3",
+		"react-highlight": "^0.10.0",
+		"sass-loader": "^6.0.6",
+		"style-loader": "^0.18.2",
+		"svg-sprite-loader": "^3.2.5",
+		"svgo-loader": "^1.2.1",
+		"webpack": "^3.6.0"
+	},
+	"dependencies": {
+		"react": "^15.6.1",
+		"react-dom": "^15.6.1"
+	}
+}

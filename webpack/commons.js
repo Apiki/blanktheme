@@ -1,23 +1,13 @@
 const { join, resolve } = require( 'path' );
 
 const config = {
+	entry: join( __dirname, '..', 'components/index.js' ),
+
 	paths: {
 		assets: join( __dirname, '..', 'assets' ),
-		stories: join( __dirname, '..', 'stories' ),
+		components: join( __dirname, '..', 'components' ),
 		dest: join( __dirname, '..' )
 	},
-
-	rules: [
-		{
-			test: /\.css$/,
-			loaders: [ "style-loader", "css-loader" ]
-		},
-		{
-			test: /\.scss$/,
-			loaders: [ "style-loader", "css-loader", "sass-loader", "import-glob-loader" ],
-			include: resolve( __dirname, '../' )
-		}
-	]
 };
 
 module.exports = config;

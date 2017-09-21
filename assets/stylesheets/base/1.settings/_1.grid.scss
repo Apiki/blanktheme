@@ -1,0 +1,17 @@
+$col  	: 70px;
+$gutter : 30px;
+
+$grid : (
+	small 						: 380px,
+	small-x 					: 480px,
+	small-padding 				: 10px,
+	small-margin 				: 20px,
+
+	medium 						: ( 8 * ( $col + $gutter ) ) - $gutter,
+	medium-x 					: 1024px,
+
+	large 						: 978px,
+	large-x   					: ( 12 * ( $col + $gutter ) ) - $gutter,
+	large-padding 				: 20px,
+	large-margin 				: $gutter,
+);

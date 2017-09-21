@@ -1,0 +1,16 @@
+%field {
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid color( detail );
+	color: color( text );
+	font: 14px/1.2 font( primary );
+	height: 40px;
+	outline: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+
+	&:focus {
+		box-shadow: none;
+	}
+}

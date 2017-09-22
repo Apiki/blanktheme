@@ -1,7 +1,5 @@
 import { configure } from '@storybook/react';
-import '../assets/stylesheets/style.scss';
-import './assets/bootstrap.css';
-import 'highlight.js/styles/github-gist.css';
+import './assets/assets.js';
 
 const req = require.context( '../components', true, /\.story\.js$/ )
 

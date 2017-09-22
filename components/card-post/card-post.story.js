@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import Highlight from 'react-highlight';
+import Component from 'utilities/component';
 
 const CardPost = (props) => (
 	<div className="card-post">
@@ -25,7 +26,7 @@ const CardPost = (props) => (
 
 storiesOf( 'Cards', module )
 	.add( 'card post', () => (
-		<div className="gb-doc-component">
+		<Component>
 			<h2>Card Post</h2>
 
 			<h3>Preview</h3>
@@ -52,7 +53,7 @@ storiesOf( 'Cards', module )
 							utilizado desde o século XVI,</p>
 						</div>
 					</div>
-				, { tabStop: 6 } )}
+				, { tabStop: 4 } )}
 			</Highlight>
 
 			<hr/>
@@ -96,10 +97,10 @@ storiesOf( 'Cards', module )
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</Component>
 	))
 	.add( 'card post without image', () => (
-		<div className="gb-doc-component">
+		<Component>
 			<h2>Card Post Without Image</h2>
 
 			<h3>Preview</h3>
@@ -121,7 +122,7 @@ storiesOf( 'Cards', module )
 							utilizado desde o século XVI,</p>
 						</div>
 					</div>
-				, { tabStop: 6 } )}
+				, { tabStop: 4 } )}
 			</Highlight>
-		</div>
+		</Component>
 	));

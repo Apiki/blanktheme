@@ -14,5 +14,11 @@ module.exports = {
 				include: resolve( __dirname, '../' )
 			}
 		]
+	},
+
+	resolve: {
+		alias: {
+			utilities: resolve( __dirname, '../storybook/assets/utilities' )
+		}
 	}
 };

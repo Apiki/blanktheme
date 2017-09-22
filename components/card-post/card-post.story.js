@@ -110,7 +110,7 @@ storiesOf( 'Cards', module )
 
 			<h3>Usage</h3>
 
-			<Highlight>
+			<Highlight className="html">
 				{reactElementToJSXString(
 					<div class="card-post">
 						<div class="card-content">

@@ -1,0 +1,32 @@
+$_icon-size: 18px;
+$_wrap-size: 40px;
+
+.gb-list-icons {
+	list-style: none;
+	padding: 0;
+
+    li {
+        border: 1px solid #eee;
+		border-radius: 50%;
+		color: darken( #eee, 15% );
+		cursor: pointer;
+        font-size: $_icon-size;
+		height: $_wrap-size;
+		margin: 0 15px 15px 0;
+		position: relative;
+		text-align: center;
+		transition: .2s;
+		width: $_wrap-size;
+
+		&:hover {
+			color: darken( #eee, 35% );
+		}
+	}
+
+	i {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate3d( -50%, -50%, 0 );
+	}
+}

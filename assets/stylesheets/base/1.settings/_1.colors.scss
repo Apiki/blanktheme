@@ -6,9 +6,9 @@ $colors : (
 	),
 
 	secondary : (
-		base  		: #26abdc,
-		lighten 	: lighten( #26abdc, 10% ),
-		darken 		: darken( #26abdc, 10% ),
+		opacity-90	: rgba( #26abdc, .9 ),
+		opacity-50 	: rgba( #26abdc, .5 ),
+		opacity-20	: rgba( #26abdc, .2 ),
 	),
 
 	tertiary : (

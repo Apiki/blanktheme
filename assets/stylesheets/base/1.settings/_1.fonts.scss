@@ -1,15 +1,15 @@
 $fonts : (
 	primary : (
-		base 	: arial,
+		base 	: Helvetica Neue,
 		italic 	: false,
-		bold 	: "robotobold",
+		bold 	: false,
 		bold-ex : false
 	),
 
 	secondary : (
-		base 	: "Arial",
+		base 	: Menlo,
 		italic 	: false,
-		bold 	: "Arial Black",
+		bold 	: false,
 		bold-ex : false
 	),
 
@@ -18,9 +18,5 @@ $fonts : (
 		italic 	: false,
 		bold 	: false,
 		bold-ex : false
-	),
-
-	icon : (
-		base 	: "ghost-icomoon"
-	),
+	)
 );

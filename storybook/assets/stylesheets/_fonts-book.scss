@@ -1,0 +1,56 @@
+.gb-font-item {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    margin: 20px 25px 20px 0;
+    width: 160px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .gb-font-preview {
+        align-self: flex-end;
+        font-size: 25px;
+        line-height: 1;
+        margin-right: 5px;
+    }
+
+    .gb-font-info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+		justify-content: space-between;
+
+		input {
+			border: none;
+			color: darken( #eee, 35% );
+			display: block;
+			flex-grow: 1;
+			font-size: 14px;
+			max-width: 100%;
+			outline: 0;
+
+			&:last-child {
+				color: darken( #eee, 15% );
+				font-size: 12px;
+			}
+		}
+    }
+
+    .gb-font-slug,
+    .gb-font-name {
+        display: block;
+    }
+
+    .gb-font-slug {
+        font-size: 14px;
+        overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+    }
+
+    .gb-font-name {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,27 @@
+.#{$prefix}-color-card {
+	border-radius: 4px;
+	box-shadow: 0 3px 4px rgba( 0, 0, 0, .1), 0 1px 0 rgba( 0, 0, 0, .1);
+	margin: 1em 1em 1em 0;
+	overflow: hidden;
+	width: 165px;
+}
+
+.#{$prefix}-color-swatch {
+	height: 100px;
+	width: auto;
+}
+
+.#{$prefix}-color-name {
+	font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 8px;
+}
+
+.#{$prefix}-color-hex,
+.#{$prefix}-color-rgb {
+	font-size: 14px;
+    line-height: 18px;
+    color: $color-gray-100;
+    margin: 8px;
+}

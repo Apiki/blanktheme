@@ -1,5 +1,11 @@
-@import 'doc-component';
-@import 'message';
-@import 'colors-book';
-@import 'fonts-book';
-@import 'icons-book';
+@import 'variables';
+
+@import 'components/color-palette';
+@import 'components/typography';
+@import 'components/icon-package';
+@import 'components/code-snippet';
+
+@import 'layout/page-header';
+@import 'layout/grid-items';
+@import 'layout/section';
+@import 'layout/page';

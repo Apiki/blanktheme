@@ -1,0 +1,19 @@
+.#{$prefix}-code-snippet {
+	background: $color-white-200;
+	border-radius: 4px;
+	color: $color-gray-100;
+	display: block;
+	font-size: 14px;
+	line-height: 22px;
+	padding: 16px;
+	text-transform: lowercase;
+	width: 98%;
+
+	&.small {
+		max-width: 260px;
+	}
+
+	&.middle {
+		max-width: 500px;
+	}
+}

@@ -1,53 +1,70 @@
 import React from 'react';
 import sassToJs from 'sass-to-js';
-import { extract } from 'helpers/utils';
 import { storiesOf } from '@storybook/react';
+import { extract } from 'addons/helpers';
+import {
+	GbPage,
+	GbPalette,
+	GbTypography,
+	GbIconPackage,
+	GbBlockCode
+} from 'addons';
 
-import Highlight from 'react-highlight';
-import FontsBook from 'helpers/components/FontsBook';
-import IconsBook from 'helpers/components/IconsBook';
-import ColorsPalette from 'helpers/components/ColorsPalette';
-import WrapperComponent from 'helpers/components/WrapperComponent';
+const palettes  = extract(
+	sassToJs( document.getElementById( 'root' ),
+	{ pseudoEl: ':after', cssProperty: 'content' } )
+);
 
-const icons          = require( 'assets/fonts/icon/selection.json' );
-const colorsPalettes = extract( sassToJs( document.getElementById( 'root' ), { pseudoEl: ':after', cssProperty: 'content' } ) );
-const fontsBook      = extract( sassToJs( document.getElementById( 'root' ), { pseudoEl: ':before', cssProperty: 'content' } ) );
+const typefaces = extract(
+	sassToJs( document.getElementById( 'root' ),
+	{ pseudoEl: ':before', cssProperty: 'content' } )
+);
 
-storiesOf( 'Project Commons', module )
-	.add( 'Colors Palette', () => (
-		<WrapperComponent>
-			<h2>Color Palette</h2>
+const iconPackage = require( 'assets/fonts/icon/selection.json' );
 
-			{colorsPalettes.map( (palette) => (
-				<ColorsPalette data={ palette } />
+const textColors = extract( palettes[3].value );
+
+storiesOf( 'Style', module )
+	.add( 'Color', () => (
+		<GbPage title="Color">
+			<h2>Palette</h2>
+
+			<p><strong>Lorem Ipsum</strong> é simplesmente uma simulação de texto da indústria
+			tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
+			quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou
+			para fazer um livro de modelos de tipos.</p>
+
+			{palettes.map( palette => (
+				<GbPalette data={palette} />
 			))}
 
-			<h3>Usage</h3>
-			<p>The color function accepts two parameters $color and $variation, $variation is optional.</p>
-			<Highlight className="sass">
-				{'color( $color, $variation: base );  // ex: color( primary, lighten );'}
-			</Highlight>
-		</WrapperComponent>
-	))
-	.add( 'Fonts Book', () => (
-		<WrapperComponent>
-			<h2>Color Palette</h2>
+			<h2>Usage</h2>
 
-			{fontsBook.map( (book, index) => (
-				<FontsBook data={book} />
+			<GbBlockCode language="sass">
+				color( $color, $variation: base ); // color( primary, light );
+			</GbBlockCode>
+
+		</GbPage>
+	))
+	.add( 'Typography', () => (
+		<GbPage title="Typography">
+			<p>Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a
+			editoração eletrônica, permanecendo essencialmente inalterado.</p>
+
+			<h2>Typefaces</h2>
+
+			{typefaces.map( typeface => (
+				<GbTypography data={typeface} />
 			))}
-
-			<h3>Usage</h3>
-			<p>The color function accepts two parameters $color and $variation, $variation is optional.</p>
-			<Highlight className="sass">
-				{'font( $font, $variation: base );  // ex: font( primary, bold );'}
-			</Highlight>
-		</WrapperComponent>
+		</GbPage>
 	))
-	.add( 'Icons Book', () => (
-		<WrapperComponent>
-			<h2>Icons Book</h2>
+	.add( 'Icons', () => (
+		<GbPage title="Icons">
+			<h2>Package</h2>
 
-			<IconsBook data={ icons }/>
-		</WrapperComponent>
+			<GbIconPackage storage={iconPackage} />
+
+			<h2>Usage</h2>
+
+		</GbPage>
 	));

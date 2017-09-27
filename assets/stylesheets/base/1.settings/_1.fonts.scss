@@ -1,8 +1,8 @@
 $fonts : (
 	primary : (
-		base 	: Helvetica Neue,
+		base 	: "Helvetica-Neue",
 		italic 	: false,
-		bold 	: false,
+		bold 	: "Helvetica-Neue-Bold",
 		bold-ex : false
 	),
 
@@ -14,7 +14,7 @@ $fonts : (
 	),
 
 	tertiary : (
-		base 	: "Trebuchet MS",
+		base 	: "Trebuchet-MS",
 		italic 	: false,
 		bold 	: false,
 		bold-ex : false

@@ -14,59 +14,44 @@ const config = {
 	rules: [
 		{
 			test: /\.css$/,
-			loaders: [ "style-loader", "css-loader", "resolve-url-loader" ]
+			use:[
+				{
+					loader: "style-loader",
+					options: {
+						convertToAbsoluteUrls: true
+					}
+				},
+				"css-loader",
+				"resolve-url-loader"
+			]
 		},
 		{
 			test: /\.scss$/,
 			include: resolve( __dirname, '../' ),
-			loaders: [ "style-loader", "css-loader", "resolve-url-loader", "sass-loader", "import-glob-loader" ]
-		},
-		// {
-		// 	test: /\.(png|jpg|woff2|woff|ttf|eot|svg)$/,
-		// 	loader: "ignore-loader"
-		// },
-		// {
-		// 	test: /(\.js|\.jsx)$/,
-		// 	exclude: /node_modules/,
-		// 	loader: 'babel-loader'
-		// },
-		// {
-		// 	test: /\.svg$/,
-		// 	use: [
-		// 		{
-		// 			loader  : 'svg-sprite-loader',
-		// 			options : {
-		// 				extract : true,
-		// 				spriteFilename : 'icons-sprite.svg'
-		// 			}
-		// 		},
-		// 		{
-		// 			loader  : 'svgo-loader',
-		// 			options : {
-		// 			plugins : [
-		// 					{ removeDoctype: true },
-		// 					{ removeComments: true },
-		// 					{ removeTitle: true },
-		// 					{ removeEmptyAttrs: true },
-		// 					{ removeEmptyContainers: true},
-		// 					{ minifyStyles: true },
-		// 					{ convertTransform: true },
-		// 					{ removeUnknownsAndDefaults: true }
-		// 				]
-		// 			}
-		// 		}
-		// 	]
-		// }
+			use:[
+				{
+					loader: "style-loader",
+					options: {
+						convertToAbsoluteUrls: true
+					}
+				},
+				"css-loader",
+				"resolve-url-loader",
+				"sass-loader",
+				"import-glob-loader"
+			]
+		}
 	],
 
 	output: {
 		filename   : 'built.js',
-		path       : join( __dirname, '..' )
+		path       : join( __dirname, '..' ),
+		publicPath : '/'
 	},
 
 	resolve: {
 		alias: {
-			helpers: resolve( __dirname, '../storybook/assets/helpers' ),
+			addons: resolve( __dirname, '../storybook/assets/addons-apiki' ),
 			assets : resolve( __dirname, '../assets' )
 		}
 	},

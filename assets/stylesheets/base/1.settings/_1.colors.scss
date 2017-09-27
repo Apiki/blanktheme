@@ -1,19 +1,19 @@
 $colors : (
 	primary : (
-		base  		: #ee8622,
 		lighten 	: lighten( #ee8622, 10% ),
+		base  		: #ee8622,
 		darken 		: darken( #ee8622, 10% ),
 	),
 
 	secondary : (
-		opacity-90	: rgba( #26abdc, .9 ),
-		opacity-50 	: rgba( #26abdc, .5 ),
 		opacity-20	: rgba( #26abdc, .2 ),
+		opacity-50 	: rgba( #26abdc, .5 ),
+		opacity-90	: rgba( #26abdc, .9 ),
 	),
 
 	tertiary : (
-		base  		: #4a4a4a,
 		lighten 	: lighten( #4a4a4a, 10% ),
+		base  		: #4a4a4a,
 		darken 		: darken( #4a4a4a, 10% ),
 	),
 
@@ -21,6 +21,7 @@ $colors : (
 		base 		: #858484,
 		title 		: #676767,
 		link 		: #ee8622,
+		DeMolay     : #000,
 	),
 
 	detail : (

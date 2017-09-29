@@ -6,7 +6,7 @@
   "author": "Apiki",
   "license": "GPL-2.0",
   "scripts": {
-    "build:storybook": "build-storybook -c storybook -o ./ghost",
+    "build:storybook ": "build-storybook -c storybook -o ./ghost",
     "dev:storybook": "start-storybook -s ./ -p 9001 -c storybook",
     "dev:theme": "webpack --config ./webpack/dev.config.js --watch --debug --progress --colors",
     "phpcs": "phpcs --colors -p ./",

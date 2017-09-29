@@ -2,14 +2,17 @@
   "name": "gb-theme",
   "version": "1.0.0",
   "description": "Theme Boilerplate",
-  "main": "index.js",
   "repository": "https://github.com/Apiki/gb-theme.git",
   "author": "Apiki",
   "license": "GPL-2.0",
   "scripts": {
+    "build:storybook": "build-storybook -c storybook -o ./ghost",
     "dev:storybook": "start-storybook -s ./ -p 9001 -c storybook",
-	"build:storybook": "build-storybook -c storybook -o ./ghost",
-	"dev:theme": "webpack --config ./webpack/dev.config.js --watch --debug --progress --colors"
+    "dev:theme": "webpack --config ./webpack/dev.config.js --watch --debug --progress --colors",
+    "phpcs": "phpcs --colors -p ./",
+    "phpcs:diff": "git diff --name-only --cached --diff-filter=ACMRTUXB -- . ':(exclude)vendor/*' | xargs phpcs --colors -p",
+    "precommit": "yarn phpcs:diff",
+    "prepush": "yarn phpcs"
   },
   "devDependencies": {
     "@storybook/react": "^3.2.8",
@@ -19,6 +22,7 @@
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "husky": "^0.14.3",
     "ignore-loader": "^0.1.2",
     "import-glob-loader": "^1.1.0",
     "node-sass": "^4.5.3",

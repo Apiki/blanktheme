@@ -16,22 +16,4 @@ use GB\Theme\Core;
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<?php do_action( Core::SLUG . '_start_body' ); ?>
 
-	<header id="header">
-		<div class="container">
-			<div>
-
-			</div>
-
-			<div>
-				<div class="branding">
-					<a href="<?php echo esc_url( home_url() ); ?>" title="branding"><?php bloginfo( 'blogname' ); ?></a>
-				</div>
-			</div>
-
-			<div>
-
-			</div>
-		</div>
-	</header>

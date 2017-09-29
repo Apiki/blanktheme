@@ -4,7 +4,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-include 'vendor/autoload.php';
+include __DIR__ . '/vendor/autoload.php';
 
 add_action( 'tgmpa_register', 'gb_theme_register_required_plugins' );
 

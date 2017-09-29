@@ -7,6 +7,5 @@ if ( ! function_exists( 'add_action' ) ) {
 get_header();
 ?>
 
-<p>Hello There!</p>
-
-<?php get_footer(); ?>
+<?php
+get_footer();

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "865ce2104684dcfea56e0cad4dcd8703",
+    "content-hash": "28fedb87e51ca32448a3acbee8ee43a5",
     "packages": [
         {
             "name": "aristath/kirki",
-            "version": "3.0.9",
+            "version": "3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aristath/kirki.git",
-                "reference": "1f560d7f43fc40bd1d25ddcbfe6613626788a169"
+                "reference": "4a1c9e695f1d158c5c92f22be3085823df12640d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/1f560d7f43fc40bd1d25ddcbfe6613626788a169",
-                "reference": "1f560d7f43fc40bd1d25ddcbfe6613626788a169",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/4a1c9e695f1d158c5c92f22be3085823df12640d",
+                "reference": "4a1c9e695f1d158c5c92f22be3085823df12640d",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
             ],
             "description": "Extending the WordPress customizer",
             "homepage": "http://kirki.org",
-            "time": "2017-07-08T12:53:50+00:00"
+            "time": "2017-09-21T19:01:03+00:00"
         },
         {
             "name": "composer/installers",
@@ -227,6 +227,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.3"
+    },
     "platform-dev": []
 }

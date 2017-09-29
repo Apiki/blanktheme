@@ -3,7 +3,9 @@
 	<description>Strict WordPress theme coding standards.</description>
 
 	<exclude-pattern>./*\.(css|js|json|map|xml)</exclude-pattern>
-	<exclude-pattern>./vendor/*\.php</exclude-pattern>
+	<exclude-pattern>*/.sass-cache/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
 
 	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
 	<rule ref="Generic.Commenting.Todo"/>

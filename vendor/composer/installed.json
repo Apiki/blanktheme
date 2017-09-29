@@ -177,17 +177,17 @@
     },
     {
         "name": "aristath/kirki",
-        "version": "3.0.9",
-        "version_normalized": "3.0.9.0",
+        "version": "3.0.10",
+        "version_normalized": "3.0.10.0",
         "source": {
             "type": "git",
             "url": "https://github.com/aristath/kirki.git",
-            "reference": "1f560d7f43fc40bd1d25ddcbfe6613626788a169"
+            "reference": "4a1c9e695f1d158c5c92f22be3085823df12640d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aristath/kirki/zipball/1f560d7f43fc40bd1d25ddcbfe6613626788a169",
-            "reference": "1f560d7f43fc40bd1d25ddcbfe6613626788a169",
+            "url": "https://api.github.com/repos/aristath/kirki/zipball/4a1c9e695f1d158c5c92f22be3085823df12640d",
+            "reference": "4a1c9e695f1d158c5c92f22be3085823df12640d",
             "shasum": ""
         },
         "require": {
@@ -197,7 +197,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-07-08T12:53:50+00:00",
+        "time": "2017-09-21T19:01:03+00:00",
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",

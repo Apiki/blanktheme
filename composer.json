@@ -1,23 +1,25 @@
 {
-    "name": "apiki/gb-theme",
-    "description": "Ghost Back theme.",
-    "type": "wordpress-theme",
-    "license": "GPL-2.0",
-    "require": {
-        "tgmpa/tgm-plugin-activation": "^2.6",
-        "aristath/kirki": "^3.0"
-    },
-    "extra": {
-        "installer-paths": {
-            "vendor/{$name}/": ["type:wordpress-plugin"]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "GB\\Theme\\": "src/"
-        },
-        "files": [
-            "vendor/kirki/kirki.php"
-        ]
+  "name": "apiki/gb-theme",
+  "description": "Ghost Back theme.",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0",
+  "require": {
+    "php": ">=5.3",
+    "composer/installers": "^1.0",
+    "tgmpa/tgm-plugin-activation": "^2.6",
+    "aristath/kirki": "^3.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$name}/": ["type:wordpress-plugin"]
     }
+  },
+  "autoload": {
+    "psr-4": {
+      "GB\\Theme\\": "src/"
+    },
+    "files": [
+      "vendor/kirki/kirki.php"
+    ]
+  }
 }

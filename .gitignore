@@ -58,9 +58,3 @@ jspm_packages
 *.css.map
 
 # End of https://www.gitignore.io/api/sass
-
-### BrowserSync ###
-browserSync.json
-
-### Directories ###
-ghost/

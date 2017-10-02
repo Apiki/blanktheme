@@ -1,8 +1,8 @@
 {
-  "name": "gb-theme",
+  "name": "blanktheme",
   "version": "1.0.0",
   "description": "Theme Boilerplate",
-  "repository": "https://github.com/Apiki/gb-theme.git",
+  "repository": "https://github.com/Apiki/blanktheme.git",
   "author": "Apiki",
   "license": "GPL-2.0",
   "scripts": {

@@ -1,13 +1,13 @@
 <?php
 
-namespace GB\Theme\Controller;
+namespace Blanktheme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\Theme\Model\Menu;
-use GB\Theme\Core;
+use Blanktheme\Model\Menu;
+use Blanktheme\Core;
 
 class Menus
 {
@@ -18,6 +18,6 @@ class Menus
 
 	public function register_menus()
 	{
-		register_nav_menu( Menu::HEADER, __( 'Menu Cabeçalho', 'gb-theme' ) );
+		register_nav_menu( Menu::HEADER, __( 'Menu Cabeçalho', 'blanktheme' ) );
 	}
 }

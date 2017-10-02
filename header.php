@@ -4,7 +4,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\Theme\Core;
+use Blanktheme\Core;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

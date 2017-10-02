@@ -1,6 +1,6 @@
 <?php
 
-namespace GB\Theme\Helper;
+namespace Blanktheme\Helper;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
@@ -117,40 +117,40 @@ class Utils extends Helper\Utils
 				'url'   => self::get_social_link( 'facebook' ),
 				'class' => 'facebook',
 				'icon'  => 'icon-g-facebook',
-				'title' => esc_attr__( 'Share on Facebook', 'gb-theme' ),
+				'title' => esc_attr__( 'Share on Facebook', 'blanktheme' ),
 			),
 			array(
 				'url'   => self::get_social_link( 'linkedin' ),
 				'class' => 'linkedin',
 				'icon'  => 'icon-g-linkedin',
-				'title' => esc_attr__( 'Share on Linkedin', 'gb-theme' ),
+				'title' => esc_attr__( 'Share on Linkedin', 'blanktheme' ),
 				'size'  => array( 550, 497 ),
 			),
 			array(
 				'url'   => self::get_social_link( 'google_plus' ),
 				'class' => 'google-plus',
 				'icon'  => 'icon-g-google-plus',
-				'title' => esc_attr__( 'Share on Google +', 'gb-theme' ),
+				'title' => esc_attr__( 'Share on Google +', 'blanktheme' ),
 				'size'  => array( 400, 455 ),
 			),
 			array(
 				'url'   => self::get_social_link( 'whatsapp' ),
 				'class' => 'whatsapp',
 				'icon'  => 'icon-g-whatsapp',
-				'title' => esc_attr__( 'Share on WhatsApp', 'gb-theme' ),
+				'title' => esc_attr__( 'Share on WhatsApp', 'blanktheme' ),
 			),
 			array(
 				'url'   => self::get_social_link( 'twitter' ),
 				'class' => 'twitter',
 				'icon'  => 'icon-g-twitter',
-				'title' => esc_attr__( 'Share on Twitter', 'gb-theme' ),
+				'title' => esc_attr__( 'Share on Twitter', 'blanktheme' ),
 				'size'  => array( 400, 240 ),
 			),
 			array(
 				'url'   => self::get_social_link( 'pinterest' ),
 				'class' => 'pinterest',
 				'icon'  => 'icon-g-pinterest',
-				'title' => esc_attr__( 'Share on Pinterest', 'gb-theme' ),
+				'title' => esc_attr__( 'Share on Pinterest', 'blanktheme' ),
 				'size'  => array( 765, 639 ),
 			),
 		);
@@ -171,9 +171,9 @@ class Utils extends Helper\Utils
 		$media_encoded   = rawurlencode( $media );
 		$twitter_status  = rawurlencode( sprintf( '%s %s', $title, $url ) );
 		/* translators: %s: post permalink */
-		$whatsapp_status = rawurlencode( sprintf( __( 'I thought you’d like this article %s', 'gb-theme' ), $url ) );
+		$whatsapp_status = rawurlencode( sprintf( __( 'I thought you’d like this article %s', 'blanktheme' ), $url ) );
 		/* translators: %s: post permalink */
-		$email_body      = rawurlencode( sprintf( __( 'Read more: %s', 'gb-theme' ), $url ) );
+		$email_body      = rawurlencode( sprintf( __( 'Read more: %s', 'blanktheme' ), $url ) );
 
 		$methods = array(
 			'pinterest'   => "https://pinterest.com/pin/create/link/?url={$url_encoded}&media={$media_encoded}&description={$title_encoded}",

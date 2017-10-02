@@ -1,14 +1,14 @@
 <?php
 
-namespace GB\Theme\Controller;
+namespace Blanktheme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
 use Kirki;
-use GB\Theme\Core;
-use GB\Theme\Helper\Utils;
+use Blanktheme\Core;
+use Blanktheme\Helper\Utils;
 
 class Customizer
 {
@@ -52,9 +52,9 @@ class Customizer
 			array(
 				'type'        => 'image',
 				'settings'    => 'logo',
-				'label'       => __( 'Logo', 'gb-theme' ),
+				'label'       => __( 'Logo', 'blanktheme' ),
 				'section'     => 'title_tagline',
-				'description' => __( 'The logo image of the site will be used in the header and footer. Suggested size <strong>90</strong> pixels in height by <strong>30</strong> pixels in width.', 'gb-theme' ),
+				'description' => __( 'The logo image of the site will be used in the header and footer. Suggested size <strong>90</strong> pixels in height by <strong>30</strong> pixels in width.', 'blanktheme' ),
 			)
 		);
 
@@ -68,7 +68,7 @@ class Customizer
 			array(
 				'type'     => 'color',
 				'settings' => 'theme_color',
-				'label'    => __( 'Android Chrome theme color', 'gb-theme' ),
+				'label'    => __( 'Android Chrome theme color', 'blanktheme' ),
 				'section'  => 'colors',
 			)
 		);

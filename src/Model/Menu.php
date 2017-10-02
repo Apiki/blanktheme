@@ -1,6 +1,6 @@
 <?php
 
-namespace GB\Theme\Model;
+namespace Blanktheme\Model;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );

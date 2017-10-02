@@ -1,12 +1,12 @@
 <?php
 
-namespace GB\Theme\Controller;
+namespace Blanktheme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\Theme\Core;
+use Blanktheme\Core;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -21,10 +21,10 @@ class Settings
 
 	public function register_settings()
 	{
-		$theme_options = Container::make( 'theme_options', esc_html__( 'Theme Options', 'gb-theme' ) )
+		$theme_options = Container::make( 'theme_options', esc_html__( 'Theme Options', 'blanktheme' ) )
 			->set_page_parent( 'themes.php' )
 			->add_tab(
-				esc_html__( 'General', 'gb-theme' ),
+				esc_html__( 'General', 'blanktheme' ),
 				apply_filters( Core::SLUG . '_settings_general', array() )
 			);
 
@@ -36,10 +36,10 @@ class Settings
 		return array_merge(
 			$fields,
 			array(
-				Field::make( 'header_scripts', 'header_scripts', esc_html__( 'Header scripts', 'gb-theme' ) ),
-				Field::make( 'textarea', 'body_scripts', esc_html__( 'Body scripts', 'gb-theme' ) )
-					->help_text( esc_html__( 'If you need to add scripts to your body, you should enter them here.', 'gb-theme' ) ),
-				Field::make( 'footer_scripts', 'footer_scripts', esc_html__( 'Footer scripts', 'gb-theme' ) ),
+				Field::make( 'header_scripts', 'header_scripts', esc_html__( 'Header scripts', 'blanktheme' ) ),
+				Field::make( 'textarea', 'body_scripts', esc_html__( 'Body scripts', 'blanktheme' ) )
+					->help_text( esc_html__( 'If you need to add scripts to your body, you should enter them here.', 'blanktheme' ) ),
+				Field::make( 'footer_scripts', 'footer_scripts', esc_html__( 'Footer scripts', 'blanktheme' ) ),
 			)
 		);
 	}

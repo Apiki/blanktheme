@@ -4,7 +4,9 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-include __DIR__ . '/vendor/autoload.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require( __DIR__ . '/vendor/autoload.php' );
+}
 
 add_action( 'tgmpa_register', 'gb_theme_register_required_plugins' );
 
@@ -28,4 +30,4 @@ if ( ! class_exists( 'GB\API\Core' ) ) {
 	return;
 }
 
-new GB\Theme\Core();
+new Blanktheme\Core();

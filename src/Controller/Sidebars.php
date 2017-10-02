@@ -1,12 +1,12 @@
 <?php
 
-namespace GB\Theme\Controller;
+namespace Blanktheme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\Theme\Model\Sidebar;
+use Blanktheme\Model\Sidebar;
 
 class Sidebars
 {

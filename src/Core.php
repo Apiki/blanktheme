@@ -1,6 +1,6 @@
 <?php
 
-namespace GB\Theme;
+namespace Blanktheme;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
@@ -8,7 +8,7 @@ if ( ! function_exists( 'add_action' ) ) {
 
 class Core extends Loader
 {
-	const SLUG = 'gb-theme';
+	const SLUG = 'blanktheme';
 
 	public function initialize()
 	{
@@ -63,12 +63,12 @@ class Core extends Loader
 			$this->get_global_vars()
 		);
 
-		/* html5.min.js */
+		/* html5shiv.min.js */
 		wp_enqueue_script(
 			self::SLUG . '-support-html5',
-			get_theme_file_uri( 'ghost/assets/javascripts/support/html5.min.js' ),
+			get_theme_file_uri( 'assets/support/html5shiv.min.js' ),
 			array(),
-			filemtime( get_theme_file_path( 'ghost/assets/javascripts/support/html5.min.js' ) )
+			filemtime( get_theme_file_path( 'assets/support/html5shiv.min.js' ) )
 		);
 
 		wp_script_add_data( self::SLUG . '-support-html5', 'conditional', 'lt IE 9' );
@@ -76,9 +76,9 @@ class Core extends Loader
 		/* augment.min.js */
 		wp_enqueue_script(
 			self::SLUG . '-support-augment',
-			get_theme_file_uri( 'ghost/assets/javascripts/support/augment.min.js' ),
+			get_theme_file_uri( 'assets/support/augment.min.js' ),
 			array(),
-			filemtime( get_theme_file_path( 'ghost/assets/javascripts/support/augment.min.js' ) )
+			filemtime( get_theme_file_path( 'assets/support/augment.min.js' ) )
 		);
 
 		wp_script_add_data( self::SLUG . '-support-augment', 'conditional', 'lt IE 9' );
@@ -86,9 +86,9 @@ class Core extends Loader
 		/* selectivizr.min.js */
 		wp_enqueue_script(
 			self::SLUG . '-support-selectivizr',
-			get_theme_file_uri( 'ghost/assets/javascripts/support/selectivizr.min.js' ),
+			get_theme_file_uri( 'assets/support/selectivizr.min.js' ),
 			array(),
-			filemtime( get_theme_file_path( 'ghost/assets/javascripts/support/selectivizr.min.js' ) )
+			filemtime( get_theme_file_path( 'assets/support/selectivizr.min.js' ) )
 		);
 
 		wp_script_add_data( self::SLUG . '-support-selectivizr', 'conditional', 'lt IE 9' );

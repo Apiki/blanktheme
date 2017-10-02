@@ -1,5 +1,5 @@
 {
-  "name": "apiki/gb-theme",
+  "name": "apiki/blanktheme",
   "description": "Ghost Back theme.",
   "type": "wordpress-theme",
   "license": "GPL-2.0",
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "GB\\Theme\\": "src/"
+      "Blanktheme\\": "src/"
     },
     "files": [
       "vendor/kirki/kirki.php"

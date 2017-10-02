@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'a5f882d89ab791a139cd2d37e50cdd80' => $vendorDir . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
-    '4ba14324d8c06451d360dd656b73b4da' => $vendorDir . '/kirki/kirki.php',
+    '2e32ad6c3a8eb0264cb4ac8261c48f93' => $vendorDir . '/kirki/kirki.php',
 );

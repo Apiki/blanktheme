@@ -1,12 +1,12 @@
 <?php
 
-namespace GB\Theme;
+namespace Blanktheme;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\Theme\Helper\Utils;
+use Blanktheme\Helper\Utils;
 use ReflectionClass;
 
 abstract class Loader

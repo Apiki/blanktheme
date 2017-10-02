@@ -1,13 +1,13 @@
 <?php
 
-namespace GB\Theme\Controller;
+namespace Blanktheme\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\Theme\Model\Image;
-use GB\Theme\Core;
+use Blanktheme\Model\Image;
+use Blanktheme\Core;
 
 class Images
 {
@@ -28,8 +28,8 @@ class Images
 		return array_merge(
 			$sizes,
 			array(
-				Image::SIZE_255_255 => esc_html__( 'Card medium', 'gb-theme' ),
-				Image::SIZE_165_165  => esc_html__( 'Card large', 'gb-theme' ),
+				Image::SIZE_255_255 => esc_html__( 'Card medium', 'blanktheme' ),
+				Image::SIZE_165_165  => esc_html__( 'Card large', 'blanktheme' ),
 			)
 		);
 	}

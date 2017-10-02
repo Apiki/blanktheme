@@ -8,28 +8,28 @@ class ComposerStaticInitbdb6ade3b0c22a6943a9fbd6f37ee98f
 {
     public static $files = array (
         'a5f882d89ab791a139cd2d37e50cdd80' => __DIR__ . '/..' . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
-        '4ba14324d8c06451d360dd656b73b4da' => __DIR__ . '/..' . '/kirki/kirki.php',
+        '2e32ad6c3a8eb0264cb4ac8261c48f93' => __DIR__ . '/..' . '/kirki/kirki.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'G' => 
-        array (
-            'GB\\Theme\\' => 9,
-        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
         ),
+        'B' => 
+        array (
+            'Blanktheme\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'GB\\Theme\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
+        ),
+        'Blanktheme\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

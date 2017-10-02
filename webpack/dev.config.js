@@ -10,8 +10,11 @@ module.exports = {
 
 	module  : {
 		rules: [
-			commons.rules.js,
-			commons.rules.files,
+			{
+				test: /(\.js|\.jsx)$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader'
+			},
 			{
 				test: /\.scss$/,
 				enforce: 'pre',
@@ -19,16 +22,16 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-			},
-		]
+				use: ExtractTextPlugin.extract(['css-loader', 'resolve-url-loader', 'sass-loader'])
+			}
+		].concat( commons.rules )
 	},
 
 	output  : commons.output,
 
 	plugins : [
 		new BrowserSyncPlugin( commons.browserSync ),
-		new ExtractTextPlugin( commons.styleFileName )
+		new ExtractTextPlugin( 'style.css' )
 	],
 
 	resolve: commons.resolve

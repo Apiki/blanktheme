@@ -18,6 +18,6 @@ class Menus
 
 	public function register_menus()
 	{
-		register_nav_menu( Menu::HEADER, __( 'Menu Cabeçalho', 'blanktheme' ) );
+		register_nav_menu( Menu::HEADER, __( 'Menu Header', 'blanktheme' ) );
 	}
 }

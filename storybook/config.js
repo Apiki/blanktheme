@@ -1,13 +1,15 @@
 import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
-// :: Load theme styles
-import '../assets/stylesheets/style.scss';
+import 'assets/stylesheets/style.scss';
+import 'ui/stylesheets/ui.scss';
 
-// :: Load apiki storybook styles
-import './assets/stylesheets/storybook.scss';
-
-// :: Load highlight styles theme
-import 'highlight.js/styles/atom-one-light.css';
+setOptions({
+	name: 'Project UI',
+	url : '#',
+	downPanelInRight: false,
+	showDownPanel: false,
+});
 
 const req = require.context( '../components', true, /\.story\.js$/ );
 

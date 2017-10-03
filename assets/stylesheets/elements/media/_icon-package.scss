@@ -1,14 +1,6 @@
 [class^="icon-g-"],
 [class*=" icon-g-"] {
-	font-family: 'Ghost-icomoon' !important;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	@extend %icon;
 }
 
 .icon-g-android:before {

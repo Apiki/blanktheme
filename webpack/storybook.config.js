@@ -1,14 +1,16 @@
-const commons            = require( './commons' );
-const { join, resolve }  = require( 'path' );
+const { resolve } = require( 'path' );
+const webpack     = require( 'webpack' );
+const commons     = require( './commons' );
 
 module.exports = {
-	output: {
-		publicPath: '/'
-	},
-
 	module: {
-		rules: [].concat( commons.rules ),
+		rules: [
+			{
+				test: /\.scss$/,
+				loaders: [ "style-loader", "css-loader", "sass-loader", "import-glob-loader" ]
+			}
+		].concat( commons.rules )
 	},
 
-	resolve: commons.resolve
+	resolve: Object.assign( {}, commons.resolve )
 };

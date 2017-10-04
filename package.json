@@ -6,7 +6,7 @@
   "author": "Apiki",
   "license": "GPL-2.0",
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c storybook",
+    "storybook": "start-storybook -p 9001 -c storybook -s ./assets/images",
     "phpcs": "phpcs --colors -p ./",
     "phpcs:diff": "git diff --name-only --cached --diff-filter=ACMRTUXB -- . ':(exclude)vendor/*' | xargs phpcs --colors -p",
     "precommit": "yarn phpcs:diff",

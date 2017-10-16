@@ -23,7 +23,6 @@
 
 .#{$prefix}-section {
 	color: $color-text;
-	font-size: 16px;
 	height: auto;
 	overflow: hidden;
 	padding: 48px 0 72px 72px;
@@ -41,6 +40,10 @@
 			line-height: 42px;
 			padding: 24px 0 16px;
 			margin-bottom: 24px;
+
+			&:not(:first-child) {
+				margin-top: 48px;
+			}
 		}
 
 		p:not( .#{$prefix}-code-snippet ) {
@@ -57,6 +60,10 @@
 			list-style: disc;
 			margin: 16px 0;
 			padding-left: 32px;
+
+			li {
+				margin-bottom: 10px;
+			}
 		}
 	}
 }

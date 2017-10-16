@@ -14,4 +14,4 @@ const Page = ({title, children}) => (
 	</div>
 );
 
-export default Page;
+export { Page };

@@ -3,7 +3,7 @@ const { join, resolve } = require( 'path' );
 const config = {
 	devtool: 'source-map',
 
-	entry: join( __dirname, '..', 'components/index.js' ),
+	entry: join( __dirname, '..', 'app/index.js' ),
 
 	output: {
 		filename: 'built.js',
@@ -11,6 +11,12 @@ const config = {
 	},
 
 	styleFileName: 'style.css',
+
+	browserSync: {
+		port  : 8080,
+		proxy : 'wpdev.dev',
+		files : [ '../style.css', '../built.js', '../**/*.php' ]
+	},
 
 	rules: [
 		{
@@ -29,10 +35,16 @@ const config = {
 
 	resolve: {
 		alias: {
-			ui: resolve( __dirname, '..', 'storybook/ui' ),
-			assets: resolve( __dirname, '..', 'assets' )
+			ui        : resolve( __dirname, '..', 'storybook/ui' ),
+			app       : resolve( __dirname, '..', 'app' ),
+			assets    : resolve( __dirname, '..', 'assets' ),
+			components: resolve( __dirname, '..', 'components' )
 		}
 	},
+
+	module: {
+		noParse : /node_modules\/strclass\/dist\/strclass.min.js/
+	}
 };
 
 module.exports = config;

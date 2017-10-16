@@ -6,4 +6,4 @@ const Section = ({children}) => (
 	</section>
 );
 
-export default Section;
+export { Section };

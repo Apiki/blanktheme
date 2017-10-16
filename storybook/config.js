@@ -3,6 +3,7 @@ import { setOptions } from '@storybook/addon-options';
 
 import 'assets/stylesheets/style.scss';
 import 'ui/stylesheets/ui.scss';
+import 'highlight.js/styles/atom-one-light.css';
 
 setOptions({
 	name: 'Project UI',

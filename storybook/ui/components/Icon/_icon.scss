@@ -1,0 +1,41 @@
+.#{$prefix}-icon-card {
+	display: flex;
+	flex-flow: row wrap;
+	height: auto;
+	justify-content: space-between;
+	margin-bottom: 16px;
+	margin-right: 16px;
+	margin-top: 16px;
+	width: 150px;
+}
+
+.#{$prefix}-icon-thumbnail {
+	align-items: center;
+	background: $color-gray-400;
+	border-radius: 3px;
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 auto;
+	height: 40px;
+	justify-content: center;
+	margin-right: 8px;
+	max-width: 40px;
+	order: 0;
+	width: 40px;
+}
+
+.#{$prefix}-icon-copy {
+	align-content: flex-start;
+	align-items: flex-start;
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
+	min-width: 0;
+}
+
+.#{$prefix}-icon-title {
+	color: $color-gray-900;
+	line-height: 1;
+	margin: 0;
+	width: 100%;
+}

@@ -4,6 +4,8 @@ const commons     = require( './commons' );
 
 module.exports = {
 	module: {
+		noParse : commons.module.noParse,
+
 		rules: [
 			{
 				test: /\.scss$/,

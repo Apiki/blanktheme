@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -72,11 +72,28 @@
 
 __webpack_require__(1);
 
+__webpack_require__(3);
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n/*!\n\tTheme Name: Blanktheme\n\tTheme URI: https://github.com/Apiki/blanktheme\n\tAuthor: Apiki\n\tAuthor URI: https://apiki.com\n\tDescription: Theme Boilerplate.\n\tText Domain: blanktheme\n\tDomain Path: languages/\n\tVersion: 1.0.0\n*/\n\n// :: SASS TO JS\n// -- Export variables to be used in js\n@import 'sass-to-js/sass-to-js';\n\n// :: BASE\n// -- All standard configuration of the project\n// -- ex ( fonts, reset, variables )\n@import 'base/**/*';\n\n// :: ELEMENTS\n// -- All standard configuration of the project\n// -- ex ( fonts, reset, variables )\n@import 'elements/**/*';\n\n// :: COMPONENTS\n// -- Groups of elements with the intention of building standards in components\n// -- ex ( form, card, block news )\n// @import '../../components/**/*.scss';\n\n// :: LAYOUTS\n// -- Structure and skeleton\n// -- ex ( grid, header, sidebar )\n// @import 'layouts/*.scss';\n\r\n^\r\n      Invalid CSS after \"...load the styles\": expected 1 selector or at-rule, was \"var content = requi\"\r\n      in c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\assets\\stylesheets\\style.scss (line 1, column 1)\n    at runLoaders (c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.<anonymous> (c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\async\\dist\\async.js:2244:31)\n    at Object.callback (c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\async\\dist\\async.js:906:16)\n    at options.error (c:\\wamp\\www\\wordpress.dev\\wp-content\\themes\\blanktheme\\node_modules\\node-sass\\lib\\index.js:294:32)");
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */,
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// ::SCRIPTS
+// Scripts that is used in PHP components
+// All scripts imported here will be loaded in index.js at app folder
+// ------------------------------------------------------------------------------------------------
+
+console.log('scripts here');
 
 /***/ })
 /******/ ]);

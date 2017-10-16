@@ -1,0 +1,27 @@
+span.code-snippet {
+	background: whitesmoke;
+	color: #ff3860;
+	font-family: monospace;
+	padding: 4px 7px;
+	-webkit-font-smoothing: auto;
+}
+
+.#{$prefix}-code-snippet {
+	background: $color-white-200;
+	border-radius: 4px;
+	color: $color-gray-100;
+	display: block;
+	font-size: 14px;
+	line-height: 22px;
+	padding: 16px;
+	text-transform: lowercase;
+	width: 98%;
+
+	&.small {
+		max-width: 260px;
+	}
+
+	&.medium {
+		max-width: 500px;
+	}
+}

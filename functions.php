@@ -15,7 +15,7 @@ function blanktheme_register_required_plugins() {
 		array(
 			'name'               => 'GB Plugin API',
 			'slug'               => 'gb-plugin-api',
-			'source'             => plugins_url(),
+			'source'             => 'https://github.com/Apiki/gb-plugin-api/archive/master.zip',
 			'required'           => true,
 			'version'            => '0.0.1',
 			'force_activation'   => false,

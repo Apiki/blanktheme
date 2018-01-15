@@ -9,7 +9,10 @@
 
 	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
 	<rule ref="Generic.Commenting.Todo"/>
-	<rule ref="WordPress-Extra" />
+	<rule ref="WordPress-Extra">
+		<exclude name="WordPress.CSRF.NonceVerification" />
+		<exclude name="WordPress.PHP.YodaConditions" />
+	</rule>
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>

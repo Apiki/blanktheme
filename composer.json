@@ -1,6 +1,6 @@
 {
   "name": "apiki/blanktheme",
-  "description": "Ghost Back theme.",
+  "description": "A Apiki blanktheme.",
   "type": "wordpress-theme",
   "license": "GPL-2.0",
   "require": {

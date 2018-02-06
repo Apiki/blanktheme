@@ -1,0 +1,15 @@
+@import '~storybook-ui/scss/common.scss';
+
+.#{get-prefix()}-page {
+  padding: 33px 0;
+
+  &__header { padding: 0 150px; }
+
+  &__title {
+    color: color(text, title);
+    font-family: font(secondary);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+}

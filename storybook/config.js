@@ -1,6 +1,9 @@
 import { configure } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
-// import 'prismjs/themes/prism.css'
+import 'prismjs/themes/prism.css'
+
+// -- assets/stylesheets
+import 'styles/main.scss'
 
 setOptions({
   name: 'Blanktheme UI',

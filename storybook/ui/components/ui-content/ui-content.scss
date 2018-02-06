@@ -1,0 +1,155 @@
+@import '~storybook-ui/scss/common.scss';
+
+.#{get-prefix()}-content  {
+  padding: 0 150px;
+
+  > :not(.ui-view) {
+    color: color(text);
+    font-family: font(secondary);
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  // -- headings
+  // ------------------------------------------------
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    font-weight: 600;
+    color: color(title);
+  }
+
+  // -- texts
+  // ------------------------------------------------
+  sub,
+  sup,
+  small { font-size: 12px; }
+  mark { background-color: rgba(#42b983, 0.4); }
+
+  i, em { font-style: italic; }
+
+  // a {
+  //   // color: inherit;
+  //   // position: relative;
+  //   // text-decoration: none;
+
+  //   // &::after {
+  //   //   background: rgba(#42b983, 0.4);
+  //   //   bottom: 3px;
+  //   //   content: '';
+  //   //   height: 4px;
+  //   //   left: 0;
+  //   //   position: absolute;
+  //   //   width: 100%;
+  //   // }
+  // }
+
+  p,
+  ul,
+  ol {
+    margin-bottom: -18px;
+    margin-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  blockquote {
+    background: color(detail, pre-fill);
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    border-left: 4px solid color(text, base);
+    margin: 30px 0;
+    padding: 12px 24px 12px 30px;
+    position: relative;
+
+    &.alert {
+      border-left-color: color(alert, warning);
+
+      &::before {
+        background: color(alert, warning);
+        border-radius: 100%;
+        color: #fff;
+        content: '!';
+        font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+        font-size: 14px;
+        height: 20px;
+        left: -12px;
+        line-height: 20px;
+        position: absolute;
+        text-align: center;
+        top: 14px;
+        width: 20px;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  code {
+    border-radius: 2px;
+    color: color(detail, code);
+    margin: 0 2px;
+    padding: 3px 5px;
+    white-space: nowrap;
+
+    &, pre {
+      background-color: color(detail, pre-fill);
+      font-family: "Roboto Mono", Monaco, courier, monospace;
+      font-size: 12px;
+    }
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table {
+    margin-bottom: 30px;
+    max-width: 100%;
+    min-width: 800px;
+    text-align: left;
+    width: 100%;
+
+    sup { color: color(alert, warning); }
+
+    th,
+    td {
+      border-bottom: 1px solid #ddd;
+      min-width: 110px;
+      padding: 12px;
+      vertical-align: top;
+    }
+
+    thead th {
+      border-bottom: 2px solid #ddd;
+      font-weight: 600;
+    }
+
+    tbody {
+      tr:last-child td,
+      tr:last-child th {
+        border-bottom: 0;
+      }
+
+      td:first-child,
+      th:first-child,
+      td:nth-child(3),
+      th:nth-child(3) {
+        color: color(text, link);
+      }
+
+      td:nth-child(2),
+      th:nth-child(2) {
+        color: color(detail, code);
+      }
+    }
+  }
+}

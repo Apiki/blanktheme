@@ -1,0 +1,45 @@
+// -- List
+// @author Paulo Ferreira
+// @param {Map} $attrs - map of following attributes
+// @param {Number} columns - columns quantity
+// @param {Unit} gutter - space between columns
+// @param {Selector} selector - css selector
+@mixin list( $attrs ) {
+  @if(length($attrs) == 0) {
+    @error 'Missing attributes in list mixin: $attrs was passed null';
+  }
+
+  $_queries : map-keys($attrs);
+  $_attrs   : map-get($attrs, nth($_queries, 1));
+  $_gutter  : map-get($_attrs, gutter);
+  $_columns : map-get($_attrs, columns);
+  $_selector: map-get($_attrs, selector);
+  $_selector-type: selector-type($_selector);
+
+  @if($_selector-type == id) {
+    @error "You can't use #id selector";
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  #{$_selector} { width: 100%; }
+
+  @each $_media in $_queries {
+    $_media-attrs  : map-get($attrs, $_media);
+    $_media-columns: map-get($_media-attrs, columns);
+    $_media-gutter : if( map-get($_media-attrs, gutter), map-get($_media-attrs, gutter), $_gutter ) ;
+
+    @media not all and (max-width: #{$_media}) {
+      #{$_selector} {
+        width: calc((100% / #{$_media-columns} + #{$_media-gutter / $_media-columns}) - #{$_media-gutter});
+      }
+
+      $_columns: $_media-columns;
+
+      #{$_selector}:nth-child(#{$_columns}n) { margin-right: auto; }
+      #{$_selector}:not(:nth-child(#{$_media-columns}n)) { margin-right: $_media-gutter; }
+    }
+  }
+}

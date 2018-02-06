@@ -11,8 +11,37 @@
   Tags: blanktheme, boilerplate
 */
 
+// :: VENDORS
+// -- Lib styles
+// -- ex: iDangerous Swiper, Select2, etc
+// ---------------------------------------------------------------------------
+@import 'vendors/vendors.scss';
 
-body {
-  background: #07a;
-  font-size: 16px;
-}
+// :: BASE
+// -- All standard configuration of the project
+// -- ex: colors, fonts, reset, etc
+// ---------------------------------------------------------------------------
+@import 'base/**/*.scss';
+// @import 'base/**/!(?reset|?typography|?print).scss';
+
+// :: ABSTRACTS
+// -- Abstract components, that not have your properly file
+// -- ex: button, link, input...
+// ---------------------------------------------------------------------------
+@import 'abstracts/**/*.scss';
+
+// :: COMPONENTS
+// -- Groups of elements with the intention of building standards in components
+// -- ex: form, card, block news
+// @import '../../components/**/!(?styleguide).scss';
+// ---------------------------------------------------------------------------
+@import '../../components/**/*.scss';
+
+// :: LAYOUT
+// ---------------------------------------------------------------------------
+@import 'layout/*.scss';
+
+// :: PAGES
+// -- Pages Styles
+// ---------------------------------------------------------------------------
+// @import 'pages/*.scss';

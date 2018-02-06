@@ -1,0 +1,30 @@
+$colors: (
+  primary: (
+    base: #2196F3,
+    100: #BBDEFB,
+    200: #90CAF9,
+    300: #64B5F6
+  ),
+
+  text: (
+    base: #000,
+    lighten: #fff,
+    link: #2979FF,
+    code: #FFC107
+  ),
+
+  input: (
+    base: #E0E6ED,
+    placeholder: #8492A6
+  ),
+
+  button: (
+    base: #8492A6,
+    hover: darken(#8492A6, 5%)
+  ),
+
+  states: (
+    alert: #FF5A5F,
+    success: #23E4B4
+  )
+)

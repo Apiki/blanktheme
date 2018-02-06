@@ -1,0 +1,12 @@
+@mixin scroll-bar($_size: 10px) {
+  ::-webkit-scrollbar { width: $_size; height: $_size }
+
+  ::-webkit-scrollbar-track {
+    border: 0;
+    box-shadow: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @content
+  }
+}

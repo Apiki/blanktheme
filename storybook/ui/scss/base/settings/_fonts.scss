@@ -1,0 +1,7 @@
+$_p-base: Helvetica Neue, sans-serif;
+$_p-secondary: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+
+$fonts : (
+	primary : ( base : $_p-base ),
+  secondary: ( base: $_p-secondary )
+);

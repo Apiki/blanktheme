@@ -10,8 +10,154 @@
   Text Domain: blanktheme
   Tags: blanktheme, boilerplate
 */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+html {
+  -webkit-tap-highlight-color: transparent; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ""; }
+
+a,
+button {
+  cursor: pointer;
+  outline: 0; }
+
+a {
+  text-decoration: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button,
+input,
+textarea {
+  -webkit-appearance: none; }
+
+* {
+  box-sizing: border-box; }
+
+*:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input,
+textarea,
+select,
+button {
+  font-size: 100%; }
+
+b,
+strong {
+  font-weight: 700; }
+
+i,
+em {
+  font-style: italic; }
+
+#root:after,
+#root:before {
+  display: none; }
+
+#root:after {
+  content: '{"primary":{"base":"#2196F3","100":"#BBDEFB","200":"#90CAF9","300":"#64B5F6"},"text":{"base":"#000","lighten":"#fff","link":"#2979FF","code":"#FFC107"},"input":{"base":"#E0E6ED","placeholder":"#8492A6"},"button":{"base":"#8492A6","hover":"#75859b"},"states":{"alert":"#FF5A5F","success":"#23E4B4"}}'; }
+
+#root:before {
+  content: '{"primary":{"light":"WorkSans-Light","base":"WorkSans-Regular","medium":"WorkSans-Medium","semi-bold":"WorkSans-SemiBold"}}'; }
+
 body {
-  background: #07a;
+  font-family: "WorkSans-Regular";
   font-size: 16px; }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media (min-width: 1200px) {
+    .container {
+      padding: 0; } }
 
 /*# sourceMappingURL=style.css.map*/

@@ -4,6 +4,7 @@ const { join } = require('path')
 const { readFileSync } = require('fs')
 const webpack = require('webpack')
 const babelrc = JSON.parse(readFileSync(join(__dirname, '..', '.babelrc'), 'utf-8'))
+const prismPath = join(__dirname, '..', 'node_modules', 'prismjs')
 
 const paths = {
   root: join(__dirname, '..'),
@@ -57,7 +58,7 @@ const config = {
 
   sassLoader: {
     test: /\.(css|scss)$/,
-    include: paths.root,
+    include: [paths.root, prismPath],
     use: [ 'style-loader', 'css-loader', 'sass-loader', 'import-glob-loader' ]
   },
 

@@ -1,0 +1,20 @@
+@mixin resp($size) {
+	@media ( min-width: if( type-of( $size ) == string, grid( $size ), $size ) ) {
+		@content;
+	}
+}
+
+@mixin resp-max($size) {
+	@media ( max-width: if( type-of( $size ) == string, grid( $size ) - 1px, $size - 1px ) ) {
+		@content;
+	}
+}
+
+@mixin resp-and($min, $max) {
+	$min: if( type-of( $min ) == string, grid( $min ), $min );
+	$max: if( type-of( $max ) == string, grid( $max ), $max );
+
+	@media ( min-width: $min ) and ( max-width: $max - 1px ) {
+		@content;
+	}
+}

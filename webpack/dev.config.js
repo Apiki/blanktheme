@@ -21,7 +21,6 @@ module.exports = {
   output: common.output,
 
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
     new ExtractTextPlugin('style.css'),
     new BrowserSyncPlugin(Object.assign({}, browserSync, {

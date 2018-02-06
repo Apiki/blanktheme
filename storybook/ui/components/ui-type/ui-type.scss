@@ -1,0 +1,27 @@
+@import '~storybook-ui/scss/common.scss';
+
+.#{get-prefix()}-type {
+  font-family: font(primary);
+  margin: 1em 3em 1em 0;
+
+  &__slug {
+    color: color(text, lighten);
+    font-size: font-size(medium);
+    padding-top: 25px;
+  }
+
+  &__name {
+    font-size: font-size(large);
+    font-weight: 500;
+    line-height: font-size(large) + 1;
+    margin: 10px 0 0;
+    width: 100%;
+  }
+
+  &__ex {
+    color: color(text, lighten);
+    font-size: 30px;
+    line-height: 30px;
+    margin: 10px 0 0;
+  }
+}

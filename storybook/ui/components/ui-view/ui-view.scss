@@ -1,0 +1,22 @@
+@import '~storybook-ui/scss/common.scss';
+
+.ui-view {
+  // p,
+  // ul,
+  // ol {
+  //   margin-bottom: initial;
+  //   margin-top: initial;
+  //   padding-bottom: initial;
+  // }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    font-weight: normal;
+    // color: initial;
+  }
+}

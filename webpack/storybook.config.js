@@ -2,8 +2,13 @@
 
 const { join } = require('path')
 const common = require('./common')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
+  plugins: [
+    new DashboardPlugin()
+  ],
+
   module: {
     rules: [
       common.standardPreLoader,

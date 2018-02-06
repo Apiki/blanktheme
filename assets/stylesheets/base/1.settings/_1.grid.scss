@@ -1,0 +1,20 @@
+$col      : 80px;
+$gutter   : 20px;
+$max-col  : 12;
+$container: 1200px;
+
+$grid: (
+  smaller   : 320px,
+  small     : 480px,
+  small-x   : 640px,
+
+  medium    : 768px,
+  medium-x  : 980px,
+
+  large     : ($max-col * ($col + $gutter) + $gutter * 2),
+
+  container : $container,
+
+  col       : $col,
+  gutter    : $gutter
+);

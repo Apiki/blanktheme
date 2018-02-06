@@ -1,3 +1,11 @@
 {
-  "presets": ["env", "stage-1", "react"]
+  "presets": ["env", "stage-1", "react"],
+  "plugins": [
+    "react-hot-loader/babel",
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
 }

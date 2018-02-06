@@ -79,7 +79,7 @@ abstract class Loader
 		$namespace = $this->get_namespace();
 
 		foreach ( $controllers as $name ) {
-			$this->_handle_instance( sprintf( "{$namespace}\Controller\%s", $name ), $activate );
+			$this->handle_instance( sprintf( "{$namespace}\Controller\%s", $name ), $activate );
 		}
 	}
 
@@ -119,7 +119,7 @@ abstract class Loader
 		<?php
 	}
 
-	private function _handle_instance( $class, $activate )
+	private function handle_instance( $class, $activate )
 	{
 		$instance = new $class( $activate );
 

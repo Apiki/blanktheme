@@ -5,7 +5,7 @@ if ( ! function_exists( 'add_action' ) ) {
 }
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require( __DIR__ . '/vendor/autoload.php' );
+	require __DIR__ . '/vendor/autoload.php';
 }
 
 add_action( 'tgmpa_register', 'blanktheme_register_required_plugins' );

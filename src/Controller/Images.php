@@ -28,8 +28,8 @@ class Images
 		return array_merge(
 			$sizes,
 			array(
-				Image::SIZE_255_255  => esc_html__( 'Card medium', 'blanktheme' ),
-				Image::SIZE_165_165  => esc_html__( 'Card large', 'blanktheme' ),
+				Image::SIZE_255_255 => esc_html__( 'Card medium', 'blanktheme' ),
+				Image::SIZE_165_165 => esc_html__( 'Card large', 'blanktheme' ),
 			)
 		);
 	}

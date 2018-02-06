@@ -1,31 +1,49 @@
-const commons           = require( './commons' );
-const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+'use strict'
+
+const { join } = require('path')
+const { readFileSync } = require('fs')
+const webpack = require('webpack')
+const common = require('./common')
+
+const DashboardPlugin = require('webpack-dashboard/plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const browserSync = JSON.parse(readFileSync(join(common.paths.root, 'browserSync.json'), 'utf8'))
 
 module.exports = {
-	devtool: commons.devtool,
-	entry  : commons.entry,
-	output : commons.output,
+  devtool: 'source-map',
 
-	module : {
-		noParse : commons.module.noParse,
+  entry: [
+    'babel-polyfill',
+    common.entry.main
+  ],
 
-		rules: [
-			{
-				test: /\.scss$/,
-				use : ExtractTextPlugin.extract( [ "css-loader", "sass-loader", "import-glob-loader" ] )
-			},
-			{
-				test: /\.js$/,
-				loader: "babel-loader"
-			}
-		].concat( commons.rules )
-	},
+  output: common.output,
 
-	plugins : [
-		new BrowserSyncPlugin( commons.browserSync ),
-		new ExtractTextPlugin( 'style.css' )
-	],
+  plugins: [
+    // new webpack.HotModuleReplacementPlugin(),
+    new DashboardPlugin(),
+    new ExtractTextPlugin('style.css'),
+    new BrowserSyncPlugin(Object.assign({}, browserSync, {
+      files: [
+        `${common.paths.root}/style.css`,
+        `${common.paths.root}/built.js`,
+        `${common.paths.root}/**/*.php`
+      ]
+    }), { reload: false })
+  ],
 
-	resolve: commons.resolve
-};
+  module: {
+    rules: [
+      common.standardPreLoader,
+      common.jsLoader,
+      common.fileLoader,
+      common.urlLoader,
+      Object.assign({}, common.sassLoader, {
+        use: ExtractTextPlugin.extract(common.sassLoader.use.slice(1))
+      })
+    ]
+  },
+
+  resolve: common.resolve
+}

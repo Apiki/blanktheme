@@ -1,18 +1,22 @@
-const { resolve } = require( 'path' );
-const webpack     = require( 'webpack' );
-const commons     = require( './commons' );
+'use strict'
+
+const { join } = require('path')
+const common = require('./common')
 
 module.exports = {
-	module: {
-		noParse : commons.module.noParse,
+  module: {
+    rules: [
+      common.standardPreLoader,
+      common.jsLoader,
+      common.fileLoader,
+      common.urlLoader,
+      Object.assign({}, common.sassLoader, {
+        include: common.sassLoader.include.concat([
+          join(common.paths.root, 'storybook', 'ui')
+        ])
+      })
+    ]
+  },
 
-		rules: [
-			{
-				test: /\.scss$/,
-				loaders: [ "style-loader", "css-loader", "sass-loader", "import-glob-loader" ]
-			}
-		].concat( commons.rules )
-	},
-
-	resolve: Object.assign( {}, commons.resolve )
-};
+  resolve: common.resolve
+}

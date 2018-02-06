@@ -6,6 +6,6 @@ if ( ! function_exists( 'add_action' ) ) {
 
 get_header();
 ?>
-
+<h2>Teste</h2>
 <?php
 get_footer();

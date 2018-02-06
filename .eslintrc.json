@@ -1,0 +1,27 @@
+{
+  "extends": ["standard", "standard-react"],
+
+  "plugins": ["jsx-a11y"],
+
+  "rules": {
+    "jsx-a11y/aria-props": 2,
+    "jsx-a11y/aria-role": 2,
+    "jsx-a11y/img-redundant-alt": 2,
+    "jsx-a11y/aria-unsupported-elements": 2,
+    "jsx-a11y/aria-proptypes": 2
+  },
+
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+
+  "globals": {
+    "document": false,
+    "it": false,
+    "expect": false,
+    "navigator": false,
+    "window": true
+  }
+}

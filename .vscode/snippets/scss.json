@@ -1,0 +1,10 @@
+{
+  "Comments": {
+    "prefix": "@comment",
+    "description": "Default comment",
+    "body": [
+      "// -- $1",
+      "// ----------------------------------------------------\n"
+    ]
+  }
+}

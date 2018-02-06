@@ -1,6 +1,0 @@
-@mixin transform( $prop ) {
-    -webkit-transform: $prop;
-       -moz-transform: $prop;
-         -o-transform: $prop;
-            transform: $prop;
-}
